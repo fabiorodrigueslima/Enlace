@@ -7,7 +7,7 @@ import WhatsAppButton from "../components/WhatsAppButton";
 export default function Home() {
   useEffect(() => {
     const sections = document.querySelectorAll(
-      ".quem-somos, .fazemos, .projetos, .cta-home"
+      ".quem-somos, .impacto, .testemunhos, .fazemos, .projetos, .cta-home"
     );
 
     const observer = new IntersectionObserver(
@@ -62,30 +62,19 @@ export default function Home() {
             </h1>
 
             <p>
-              O <strong>Instituto Enlace das Arteiras</strong> é uma organização
-              social sediada em Brasília/DF que atua no fortalecimento da cultura,
-              da economia solidária e do empreendedorismo feminino.
+              O <strong>Instituto Enlace das Arteiras</strong> é uma organização social de Brasília/DF dedicada a transformar vidas através da arte, sustentabilidade e empreendedorismo feminino. Conectamos mulheres artesãs, saberes tradicionais e inovação para criar oportunidades de renda, autonomia e impacto social.
             </p>
 
             <p>
-              Nosso trabalho valoriza os saberes tradicionais e promove a
-              autonomia das mulheres por meio do artesanato, incentivando práticas
-              sustentáveis, geração de renda e desenvolvimento comunitário.
+              Nosso trabalho valoriza a criatividade e o conhecimento manual, promovendo práticas sustentáveis e desenvolvimento comunitário. Através de oficinas criativas, feiras de artesanato, projetos culturais e ações socioambientais, fortalecemos mulheres e a economia solidária.
             </p>
 
             <p>
-              Realizamos oficinas, feiras, projetos culturais e ações
-              socioambientais, integrando arte, educação e sustentabilidade.
-            </p>
-
-            <p>
-              Em parceria com a Cooperativa Ecolimpo, conectamos reciclagem e
-              produção artesanal, transformando materiais em produtos criativos
-              e sustentáveis.
+              Em parceria com a <strong>Cooperativa Ecolimpo</strong>, transformamos materiais recicláveis em produtos únicos e sustentáveis, provando que arte, sustentabilidade e empreendedorismo feminino caminham juntos.
             </p>
 
             <div className="quem-buttons">
-              <a href="#projetos" className="btn-saiba-mais">
+              <a href="#impacto" className="btn-saiba-mais">
                 Conheça Mais
               </a>
 
@@ -95,6 +84,98 @@ export default function Home() {
             </div>
 
           </div>
+        </div>
+      </section>
+
+      {/* SEÇÃO DE IMPACTO */}
+      <section className="impacto" id="impacto">
+        <div className="impacto-container">
+
+          <div className="impacto-topo">
+            <span className="subtitulo">Nosso Impacto</span>
+            <h2>Números que transformam realidades</h2>
+          </div>
+
+          <div className="impacto-stats">
+
+            <div className="stat-card">
+              <div className="stat-number">500+</div>
+              <p className="stat-label">Mulheres Impactadas</p>
+              <p className="stat-description">Geração de renda e autonomia</p>
+            </div>
+
+            <div className="stat-card">
+              <div className="stat-number">2.5K+</div>
+              <p className="stat-label">Produtos Criados</p>
+              <p className="stat-description">Artesanato sustentável</p>
+            </div>
+
+            <div className="stat-card">
+              <div className="stat-number">50+</div>
+              <p className="stat-label">Feiras Realizadas</p>
+              <p className="stat-description">Conexão com comunidade</p>
+            </div>
+
+            <div className="stat-card">
+              <div className="stat-number">15T</div>
+              <p className="stat-label">Material Reciclado</p>
+              <p className="stat-description">Sustentabilidade em ação</p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* TESTEMUNHOS */}
+      <section className="testemunhos" id="testemunhos">
+        <div className="testemunhos-container">
+
+          <div className="testemunhos-topo">
+            <span className="subtitulo">Histórias de Transformação</span>
+            <h2>Vidas que mudaram através da arte</h2>
+          </div>
+
+          <div className="testemunhos-cards">
+
+            <div className="card-testemunho">
+              <div className="testemunho-texto">
+                <p>
+                  "O Enlace me deu a oportunidade de transformar meu conhecimento em renda. Hoje sou independente e posso sustentar minha família com dignidade."
+                </p>
+              </div>
+              <div className="testemunho-autor">
+                <h4>Maria Silva</h4>
+                <p>Artesã de Papel Reciclado</p>
+              </div>
+            </div>
+
+            <div className="card-testemunho">
+              <div className="testemunho-texto">
+                <p>
+                  "Participar das oficinas mudou minha vida. Aprendi novas técnicas, conheci mulheres incríveis e agora tenho um negócio próprio."
+                </p>
+              </div>
+              <div className="testemunho-autor">
+                <h4>Fernanda Costa</h4>
+                <p>Artesã de Bijuterias</p>
+              </div>
+            </div>
+
+            <div className="card-testemunho">
+              <div className="testemunho-texto">
+                <p>
+                  "Mais que um trabalho, é uma missão. Juntas estamos criando um futuro mais sustentável e igualitário para todas."
+                </p>
+              </div>
+              <div className="testemunho-autor">
+                <h4>Ana Oliveira</h4>
+                <p>Artesã de Tecido Reciclado</p>
+              </div>
+            </div>
+
+          </div>
+
         </div>
       </section>
 

@@ -1,5 +1,9 @@
 import { FaInstagram, FaFacebookF } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+
+import logoFac from "../assets/Logo - Fac.png";
+import logoSecult from "../assets/Logo - Secretaria.png";
+
 import "../styles/style.css";
 
 export default function Footer() {
@@ -67,6 +71,22 @@ export default function Footer() {
             {/* COPY */}
             <div className="footer-copy">
                 <p>© 2026 Enlace das Arteiras • Todos os direitos reservados</p>
+            </div>
+
+            {/* LOGOS INSTITUCIONAIS */}
+            <div className="footer-logos">
+
+                <p className="footer-logos-text">
+                    Este projeto foi realizado com recursos do Fundo de Apoio à Cultura do Distrito Federal
+                </p>
+
+                <div className="footer-logos-container">
+
+                    <img src={logoFac} alt="FAC" />
+                    <img src={logoSecult} alt="Secretaria de Cultura" />
+
+                </div>
+
             </div>
 
         </footer>

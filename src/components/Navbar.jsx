@@ -4,52 +4,10 @@ import logoRedonda from "../assets/Logo-Enlace.png";
 import Equipe from "../assets/Equipe.png";
 
 export default function Navbar() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
     const [showSearchSuggestions, setShowSearchSuggestions] = useState(false);
-    const [activeDropdown, setActiveDropdown] = useState(null);
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-
-    // Dados de categorias para o Mega Menu - Produtos com Materiais Recicláveis
-    const categories = {
-        "Papel & Papelão": [
-            "Cadernos Artesanais",
-            "Organizadores",
-            "Flores de Papel",
-            "Quadros Decorativos",
-        ],
-        "Plástico Reciclado": [
-            "Vasos & Cachepots",
-            "Bijuterias",
-            "Bolsas Artesanais",
-            "Luminárias",
-        ],
-        "Vidro Reciclado": [
-            "Vasos Decorativos",
-            "Luminárias",
-            "Porta-velas",
-            "Organizadores",
-        ],
-        "Madeira Reciclada": [
-            "Móveis Funcionais",
-            "Prateleiras",
-            "Caixas Organizadoras",
-            "Painéis Decorativos",
-        ],
-        "Tecido Reciclado": [
-            "Ecobags",
-            "Almofadas",
-            "Bolsas",
-            "Tapetes",
-        ],
-        "Metal & Latas": [
-            "Cachepots Rústicos",
-            "Luminárias",
-            "Organizadores",
-            "Porta-velas",
-        ],
-    };
 
     // Sugestões de busca - Produtos Recicláveis
     const searchSuggestions = [
@@ -102,15 +60,8 @@ export default function Navbar() {
         setShowSearchSuggestions(false);
     };
 
-    const handleDropdownClick = (dropdownName) => {
-        if (isMobile) {
-            setActiveDropdown(activeDropdown === dropdownName ? null : dropdownName);
-        }
-    };
-
     const handleNavLinkClick = () => {
         setIsMobileMenuOpen(false);
-        setActiveDropdown(null);
     };
 
     return (
@@ -228,150 +179,72 @@ export default function Navbar() {
                 role="navigation"
                 aria-label="Navegação principal"
             >
-                
-                    {/* NAVEGAÇÃO PRINCIPAL */}
-                    <div className="nav-primary">
-                        <a
-                            href="/"
-                            className="nav-link"
-                            onClick={handleNavLinkClick}
-                        >
-                            Home
-                        </a>
+                {/* NAVEGAÇÃO PRINCIPAL */}
+                <div className="nav-primary">
+                    <a
+                        href="/"
+                        className="nav-link"
+                        onClick={handleNavLinkClick}
+                    >
+                        Home
+                    </a>
 
-                        <a
-                            href="#secec-df"
-                            className="nav-link"
-                            onClick={handleNavLinkClick}
-                        >
-                            SECEC-DF
-                        </a>
+                    <a
+                        href="#secec-df"
+                        className="nav-link"
+                        onClick={handleNavLinkClick}
+                    >
+                        SECEC-DF
+                    </a>
 
-                        <a
-                            href="#artesanato-manualismo"
-                            className="nav-link"
-                            onClick={handleNavLinkClick}
-                        >
-                            Artesanato e Manualismo
-                        </a>
+                    <a
+                        href="#artesanato-manualismo"
+                        className="nav-link"
+                        onClick={handleNavLinkClick}
+                    >
+                        Artesanato e Manualismo
+                    </a>
 
-                        <a
-                            href="#gastronomia-artesanal"
-                            className="nav-link"
-                            onClick={handleNavLinkClick}
-                        >
-                            Gastronomia Artesanal
-                        </a>
+                    <a
+                        href="#gastronomia-artesanal"
+                        className="nav-link"
+                        onClick={handleNavLinkClick}
+                    >
+                        Gastronomia Artesanal
+                    </a>
 
-                        {/* MEGA MENU - CATÁLOGO */}
-                        <div
-                            className={`nav-item-dropdown ${isMenuOpen ? "open" : ""}`}
-                            onMouseEnter={() => !isMobile && setIsMenuOpen(true)}
-                            onMouseLeave={() => !isMobile && setIsMenuOpen(false)}
-                        >
-                            <button
-                                className="nav-link nav-link-dropdown"
-                                onClick={() => handleDropdownClick("catalogo")}
-                                aria-expanded={isMenuOpen}
-                                aria-haspopup="true"
-                            >
-                                Catálogo
-                                <svg
-                                    width="16"
-                                    height="16"
-                                    viewBox="0 0 20 20"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    className={`dropdown-icon ${isMenuOpen ? "open" : ""}`}
-                                    aria-hidden="true"
-                                >
-                                    <path d="M6 8l4 4 4-4" />
-                                </svg>
-                            </button>
+                     <a
+                        href="/parceiros"
+                        className="nav-link"
+                        onClick={handleNavLinkClick}
+                    >
+                        Parceiros
+                    </a>
 
-                            {/* MEGA MENU CONTENT */}
-                            {isMenuOpen && (
-                                <div className="mega-menu" role="menu">
-                                    <div className="mega-menu-grid">
-                                        {Object.entries(categories).map(([category, items]) => (
-                                            <div key={category} className="mega-menu-column" role="menuitem">
-                                                <h3 className="mega-menu-title">{category}</h3>
-                                                <ul className="mega-menu-list">
-                                                    {items.map((item, index) => (
-                                                        <li key={index}>
-                                                            <a
-                                                                href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
-                                                                className="mega-menu-link"
-                                                                onClick={handleNavLinkClick}
-                                                            >
-                                                                {item}
-                                                            </a>
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            </div>
-                                        ))}
+                    <a
+                        href="#cursos"
+                        className="nav-link"
+                        onClick={handleNavLinkClick}
+                    >
+                        Cursos
+                    </a>
 
-                                        {/* SEÇÃO ESPECIAL NO MEGA MENU */}
-                                        <div className="mega-menu-column mega-menu-featured" role="menuitem">
-                                            <h3 className="mega-menu-title">Em Destaque</h3>
-                                            <div className="featured-items">
-                                                <a href="#promocoes" className="featured-link" onClick={handleNavLinkClick}>
-                                                    🎉 Promoções Especiais
-                                                </a>
-                                                <a href="#novidades" className="featured-link" onClick={handleNavLinkClick}>
-                                                    ✨ Novidades
-                                                </a>
-                                                <a href="#bestsellers" className="featured-link" onClick={handleNavLinkClick}>
-                                                    ⭐ Mais Vendidos
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            )}
-                        </div>
+                    <a
+                        href="#feiras"
+                        className="nav-link"
+                        onClick={handleNavLinkClick}
+                    >
+                        Feiras
+                    </a>
 
-                        {/* DROPDOWN - SERVIÇOS */}
-                        <div
-                            className={`nav-item-dropdown ${activeDropdown === "servicos" ? "open" : ""}`}
-                            onMouseEnter={() => !isMobile && setActiveDropdown("servicos")}
-                            onMouseLeave={() => !isMobile && setActiveDropdown(null)}>
-                        </div>
-
-                        <a
-                            href="#parceiros"
-                            className="nav-link"
-                            onClick={handleNavLinkClick}
-                        >
-                            Parceiros
-                        </a>
-
-                        <a
-                            href="#cursos"
-                            className="nav-link"
-                            onClick={handleNavLinkClick}
-                        >
-                            Cursos
-                        </a>
-
-                        <a
-                            href="#feiras"
-                            className="nav-link"
-                            onClick={handleNavLinkClick}
-                        >
-                            Feiras
-                        </a>
-
-                        <a
-                            href="#galeria"
-                            className="nav-link"
-                            onClick={handleNavLinkClick}
-                        >
-                            Galeria
-                        </a>
-                    </div>
+                    <a
+                        href="#galeria"
+                        className="nav-link"
+                        onClick={handleNavLinkClick}
+                    >
+                        Galeria
+                    </a>
+                </div>
             </nav>
         </>
     );
