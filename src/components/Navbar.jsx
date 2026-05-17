@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "../styles/style.css";
-import logoRedonda from "../assets/Logo-Enlace.png";
+import logoRedonda from "../assets/Logo-Nova.png";
 import Equipe from "../assets/Equipe.png";
 
 export default function Navbar() {

@@ -10,83 +10,55 @@ export default function Footer() {
     return (
         <footer id="contato" className="footer">
 
-            {/* TOPO */}
             <div className="footer-top">
-
-                {/* ESQUERDA */}
                 <div className="footer-left">
                     <h2 className="footer-logo">Enlace das Arteiras</h2>
 
                     <p className="footer-text">
-                        Transformando vidas através da arte,
-                        cultura e sustentabilidade.
+                        Transformando vidas através da arte, cultura e sustentabilidade.
                     </p>
                 </div>
 
-                {/* DIREITA */}
                 <div className="footer-right">
-                    <h3>SIGA NOSSAS REDES</h3>
+                    <h3>Siga nossas redes</h3>
 
                     <div className="social-links">
-
-                        <a
-                            href="https://www.instagram.com/enlacedasarteiras/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Instagram"
-                        >
+                        <a href="https://www.instagram.com/enlacedasarteiras/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                             <FaInstagram />
                         </a>
 
-                        <a
-                            href="https://facebook.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Facebook"
-                        >
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                             <FaFacebookF />
                         </a>
 
-                        <a
-                            href="mailto:contato@email.com"
-                            aria-label="Email"
-                        >
+                        <a href="mailto:contato@email.com" aria-label="Email">
                             <MdEmail />
                         </a>
-
                     </div>
                 </div>
-
             </div>
 
-            {/* MENU */}
-            <div className="footer-menu">
+            <nav className="footer-menu">
                 <a href="/">Início</a>
-                <a href="#quem-somos">Quem Somos</a>
+                <a href="/quem-somos">Quem Somos</a>
                 <a href="#feiras">Feiras</a>
-                <a href="#parceiros">Parceiros</a>
+                <a href="/parceiros">Parceiros</a>
                 <a href="#contato">Contato</a>
-            </div>
+            </nav>
 
-            {/* COPY */}
-            <div className="footer-copy">
-                <p>© 2026 Enlace das Arteiras • Todos os direitos reservados</p>
-            </div>
-
-            {/* LOGOS INSTITUCIONAIS */}
             <div className="footer-logos">
-
                 <p className="footer-logos-text">
                     Este projeto foi realizado com recursos do Fundo de Apoio à Cultura do Distrito Federal
                 </p>
 
                 <div className="footer-logos-container">
-
                     <img src={logoFac} alt="FAC" />
                     <img src={logoSecult} alt="Secretaria de Cultura" />
-
                 </div>
+            </div>
 
+            <div className="footer-copy">
+                <p>© 2026 Enlace das Arteiras • Todos os direitos reservados</p>
             </div>
 
         </footer>

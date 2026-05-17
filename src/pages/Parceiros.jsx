@@ -57,40 +57,19 @@ export default function Parceiros() {
 
             <main className="parceiros-page">
 
-                {/* HERO */}
-                <motion.section
-                    className="parceiros-hero"
-                    initial={{ opacity: 0, scale: 1.1 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1 }}
-                >
+                {/* TÍTULO DA PÁGINA */}
+                <section className="parceiros-header">
 
-                    <motion.span
-                        initial={{ opacity: 0, y: -30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                    >
-                        Conexões que transformam
-                    </motion.span>
+                    <span>Conexões que transformam</span>
 
-                    <motion.h1
-                        initial={{ opacity: 0, y: 40 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4 }}
-                    >
-                        Nossos Parceiros
-                    </motion.h1>
+                    <h1>Nossos Parceiros</h1>
 
-                    <motion.p
-                        initial={{ opacity: 0, y: 40 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.6 }}
-                    >
+                    <p>
                         Conheça as instituições, empresas e apoiadores
                         que caminham junto com a Enlace das Arteiras.
-                    </motion.p>
+                    </p>
 
-                </motion.section>
+                </section>
 
                 {/* PARCEIROS */}
                 <section className="parceiros-section">
