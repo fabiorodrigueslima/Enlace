@@ -40,7 +40,6 @@ export default function Footer() {
 
             <nav className="footer-menu">
                 <a href="/">Início</a>
-                <a href="/quem-somos">Quem Somos</a>
                 <a href="#feiras">Feiras</a>
                 <a href="/parceiros">Parceiros</a>
                 <a href="#contato">Contato</a>
