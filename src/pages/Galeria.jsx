@@ -11,22 +11,7 @@ export default function Galeria() {
 
             <main className="galeria-page">
 
-                <section className="galeria-hero">
-                    <div className="galeria-hero-content">
-                        <span className="subtitulo">
-                            Memórias • Registros • Inspiração
-                        </span>
-
-                        <h1>Galeria</h1>
-
-                        <p>
-                            Estamos preparando uma galeria especial para reunir fotos,
-                            registros de eventos, oficinas, feiras, produtos artesanais
-                            e momentos marcantes do Enlace das Arteiras.
-                        </p>
-                    </div>
-                </section>
-
+               
                 <section className="galeria-content">
                     <div className="galeria-container">
 

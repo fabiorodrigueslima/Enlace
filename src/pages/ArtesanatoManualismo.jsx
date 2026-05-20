@@ -8,25 +8,7 @@ export default function ArtesanatoManualismo() {
     return (
         <>
             <Navbar />
-
             <main className="artesanato-page">
-
-                <section className="artesanato-hero">
-                    <div className="artesanato-hero-content">
-                        <span className="subtitulo">
-                            Arte • Criatividade • Trabalho Manual
-                        </span>
-
-                        <h1>Artesanato e Manualismo</h1>
-
-                        <p>
-                            Estamos preparando um espaço especial para apresentar trabalhos
-                            manuais, técnicas artesanais, produções criativas e histórias de
-                            mulheres que transformam talento em arte.
-                        </p>
-                    </div>
-                </section>
-
                 <section className="artesanato-content">
                     <div className="artesanato-container">
 

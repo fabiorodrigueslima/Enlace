@@ -10,25 +10,7 @@ export default function Cursos() {
             <Navbar />
 
             <main className="cursos-page">
-
-                <section className="cursos-hero">
-                    <div className="cursos-hero-content">
-
-                        <span className="subtitulo">
-                            Capacitação • Criatividade • Transformação
-                        </span>
-
-                        <h1>Cursos e Oficinas</h1>
-
-                        <p>
-                            Estamos preparando cursos, oficinas e experiências criativas
-                            voltadas ao fortalecimento do artesanato, empreendedorismo,
-                            sustentabilidade e geração de renda.
-                        </p>
-
-                    </div>
-                </section>
-
+                
                 <section className="cursos-content">
 
                     <div className="cursos-container">

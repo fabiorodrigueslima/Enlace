@@ -11,26 +11,6 @@ export default function SececDf() {
 
             <main className="secec-page">
 
-                {/* HERO */}
-                <section className="secec-hero">
-
-                    <div className="secec-hero-content">
-
-                        <span className="subtitulo">
-                            Cultura • Arte • Transformação Social
-                        </span>
-
-                        <h1>SECEC-DF</h1>
-
-                        <p>
-                            O Enlace das Arteiras reconhece a importância do incentivo à
-                            cultura, ao artesanato, à economia criativa e às ações sociais
-                            desenvolvidas no Distrito Federal.
-                        </p>
-
-                    </div>
-
-                </section>
 
                 {/* CONTEÚDO */}
                 <section className="secec-content">

@@ -11,21 +11,7 @@ export default function GastronomiaArtesanal() {
 
             <main className="gastronomia-page">
 
-                <section className="gastronomia-hero">
-                    <div className="gastronomia-hero-content">
-                        <span className="subtitulo">
-                            Sabores • Cultura • Tradição
-                        </span>
-
-                        <h1>Gastronomia Artesanal</h1>
-
-                        <p>
-                            Estamos preparando um espaço especial para apresentar sabores
-                            artesanais, receitas afetivas, culinária criativa e experiências
-                            gastronômicas ligadas à cultura e ao empreendedorismo local.
-                        </p>
-                    </div>
-                </section>
+               
 
                 <section className="gastronomia-content">
                     <div className="gastronomia-container">

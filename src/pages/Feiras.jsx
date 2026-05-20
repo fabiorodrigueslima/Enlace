@@ -11,21 +11,6 @@ export default function Feiras() {
 
             <main className="feiras-page">
 
-                <section className="feiras-hero">
-                    <div className="feiras-hero-content">
-                        <span className="subtitulo">
-                            Cultura • Exposição • Economia Criativa
-                        </span>
-
-                        <h1>Feiras e Eventos</h1>
-
-                        <p>
-                            Estamos preparando um espaço especial para divulgar feiras,
-                            exposições, eventos culturais e oportunidades de valorização
-                            do artesanato e da produção criativa local.
-                        </p>
-                    </div>
-                </section>
 
                 <section className="feiras-content">
                     <div className="feiras-container">
