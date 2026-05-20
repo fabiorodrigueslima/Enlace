@@ -181,6 +181,7 @@ export default function Navbar() {
             >
                 {/* NAVEGAÇÃO PRINCIPAL */}
                 <div className="nav-primary">
+
                     <a
                         href="/"
                         className="nav-link"
@@ -190,7 +191,7 @@ export default function Navbar() {
                     </a>
 
                     <a
-                        href="#secec-df"
+                        href="/secec-df"
                         className="nav-link"
                         onClick={handleNavLinkClick}
                     >
@@ -198,7 +199,7 @@ export default function Navbar() {
                     </a>
 
                     <a
-                        href="#artesanato-manualismo"
+                        href="/artesanato-manualismo"
                         className="nav-link"
                         onClick={handleNavLinkClick}
                     >
@@ -206,23 +207,15 @@ export default function Navbar() {
                     </a>
 
                     <a
-                        href="#gastronomia-artesanal"
+                        href="/gastronomia-artesanal"
                         className="nav-link"
                         onClick={handleNavLinkClick}
                     >
                         Gastronomia Artesanal
                     </a>
 
-                     <a
-                        href="/parceiros"
-                        className="nav-link"
-                        onClick={handleNavLinkClick}
-                    >
-                        Parceiros
-                    </a>
-
                     <a
-                        href="#cursos"
+                        href="/cursos"
                         className="nav-link"
                         onClick={handleNavLinkClick}
                     >
@@ -230,7 +223,7 @@ export default function Navbar() {
                     </a>
 
                     <a
-                        href="#feiras"
+                        href="/feiras"
                         className="nav-link"
                         onClick={handleNavLinkClick}
                     >
@@ -238,12 +231,21 @@ export default function Navbar() {
                     </a>
 
                     <a
-                        href="#galeria"
+                        href="/galeria"
                         className="nav-link"
                         onClick={handleNavLinkClick}
                     >
                         Galeria
                     </a>
+
+                    <a
+                        href="/parceiros"
+                        className="nav-link"
+                        onClick={handleNavLinkClick}
+                    >
+                        Parceiros
+                    </a>
+
                 </div>
             </nav>
         </>
