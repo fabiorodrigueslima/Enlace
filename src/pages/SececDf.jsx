@@ -11,7 +11,6 @@ export default function SececDf() {
 
             <main className="secec-page">
 
-
                 {/* CONTEÚDO */}
                 <section className="secec-content">
 
