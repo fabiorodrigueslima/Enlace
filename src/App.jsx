@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 /* PÁGINAS */
 
@@ -13,65 +13,17 @@ import Feiras from "./pages/Feiras";
 import Galeria from "./pages/Galeria";
 
 function App() {
-
   return (
-
-    <BrowserRouter>
-
-      <Routes>
-
-        {/* HOME */}
-        <Route
-          path="/"
-          element={<Home />}
-        />
-
-        {/* PARCEIROS */}
-        <Route
-          path="/parceiros"
-          element={<Parceiros />}
-        />
-
-        {/* SECEC DF */}
-        <Route
-          path="/secec-df"
-          element={<SececDf />}
-        />
-
-        {/* ARTESANATO */}
-        <Route
-          path="/artesanato-manualismo"
-          element={<ArtesanatoManualismo />}
-        />
-
-        {/* GASTRONOMIA */}
-        <Route
-          path="/gastronomia-artesanal"
-          element={<GastronomiaArtesanal />}
-        />
-
-        {/* CURSOS */}
-        <Route
-          path="/cursos"
-          element={<Cursos />}
-        />
-
-        {/* FEIRAS */}
-        <Route
-          path="/feiras"
-          element={<Feiras />}
-        />
-
-        {/* GALERIA */}
-        <Route
-          path="/galeria"
-          element={<Galeria />}
-        />
-
-      </Routes>
-
-    </BrowserRouter>
-
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/parceiros" element={<Parceiros />} />
+      <Route path="/secec-df" element={<SececDf />} />
+      <Route path="/artesanato-manualismo" element={<ArtesanatoManualismo />} />
+      <Route path="/gastronomia-artesanal" element={<GastronomiaArtesanal />} />
+      <Route path="/cursos" element={<Cursos />} />
+      <Route path="/feiras" element={<Feiras />} />
+      <Route path="/galeria" element={<Galeria />} />
+    </Routes>
   );
 }
 

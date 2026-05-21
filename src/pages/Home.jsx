@@ -3,6 +3,7 @@ import Equipe from "../assets/Equipe.png";
 import { useEffect } from "react";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
+import SEO from "../components/SEO";
 
 export default function Home() {
   useEffect(() => {
@@ -32,6 +33,12 @@ export default function Home() {
 
   return (
     <div>
+      <SEO
+        title="Enlace das Arteiras | Cultura, Arte e Sustentabilidade"
+        description="Projeto cultural voltado ao fortalecimento do artesanato, empreendedorismo feminino, sustentabilidade e economia criativa no Distrito Federal."
+        image="https://enlacedasarteiras.com.br/capa-site.jpg"
+        url="https://enlacedasarteiras.com.br"
+      />
       <Navbar />
 
       {/* QUEM SOMOS */}
