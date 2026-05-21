@@ -74,7 +74,9 @@ export default function Footer() {
                         </a>
 
                         <a
-                            href="mailto:projetoenlacedasarteiras@gmail.com?subject=Contato%20pelo%20site%20Enlace%20das%20Arteiras&body=Olá,%20vim%20pelo%20site%20do%20Enlace%20das%20Arteiras%20e%20gostaria%20de%20mais%20informações."
+                            href="https://mail.google.com/mail/?view=cm&fs=1&to=projetoenlacedasarteiras@gmail.com&su=Contato%20pelo%20site%20Enlace%20das%20Arteiras&body=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações."
+                            target="_blank"
+                            rel="noopener noreferrer"
                             aria-label="Email"
                         >
                             <MdEmail />
