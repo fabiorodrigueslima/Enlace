@@ -74,8 +74,10 @@ export default function Footer() {
                         </a>
 
                         <a
-                            href="mailto:fabiorodrigues.programasao@gmail.com"
+                            href="mailto:projetoenlacedasarteiras@gmail.com"
                             aria-label="Email"
+                            target="_blank"
+                            rel="noopener noreferrer"
                         >
                             <MdEmail />
                         </a>
