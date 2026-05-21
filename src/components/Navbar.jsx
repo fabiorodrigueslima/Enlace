@@ -1,15 +1,21 @@
 import { useState, useEffect } from "react";
 import "../styles/style.css";
+
 import logoRedonda from "../assets/logo-Nova.png";
 import Equipe from "../assets/Equipe.png";
 
 export default function Navbar() {
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [searchQuery, setSearchQuery] = useState("");
-    const [showSearchSuggestions, setShowSearchSuggestions] = useState(false);
-    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
-    // Sugestões de busca - Produtos Recicláveis
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+    const [searchQuery, setSearchQuery] = useState("");
+
+    const [showSearchSuggestions, setShowSearchSuggestions] = useState(false);
+
+    /* =========================
+       SUGESTÕES
+    ========================= */
+
     const searchSuggestions = [
         "Cadernos Artesanais",
         "Vasos Reciclados",
@@ -20,166 +26,264 @@ export default function Navbar() {
         "Organizadores Criativos",
     ];
 
-    // Monitorar mudanças de tamanho de tela
+    /* =========================
+       FECHAR MENU AO REDIMENSIONAR
+    ========================= */
+
     useEffect(() => {
+
         const handleResize = () => {
-            setIsMobile(window.innerWidth < 768);
+
+            if (window.innerWidth > 900) {
+                setIsMobileMenuOpen(false);
+            }
+
         };
 
         window.addEventListener("resize", handleResize);
+
         return () => window.removeEventListener("resize", handleResize);
+
     }, []);
 
-    // Fechar menu ao clicar fora
+    /* =========================
+       FECHAR MENU AO CLICAR FORA
+    ========================= */
+
     useEffect(() => {
+
         const handleClickOutside = (e) => {
-            if (!e.target.closest(".navbar-menu") && !e.target.closest(".hamburger-menu")) {
+
+            if (
+                !e.target.closest(".navbar-menu") &&
+                !e.target.closest(".hamburger-menu")
+            ) {
                 setIsMobileMenuOpen(false);
             }
+
         };
 
         if (isMobileMenuOpen) {
+
             document.addEventListener("click", handleClickOutside);
-            return () => document.removeEventListener("click", handleClickOutside);
+
+            return () =>
+                document.removeEventListener("click", handleClickOutside);
+
         }
+
     }, [isMobileMenuOpen]);
 
+    /* =========================
+       BUSCA
+    ========================= */
+
     const handleSearchChange = (e) => {
+
         setSearchQuery(e.target.value);
-        setShowSearchSuggestions(e.target.value.length > 0);
+
+        setShowSearchSuggestions(
+            e.target.value.length > 0
+        );
+
     };
 
     const handleSearchSubmit = (e) => {
+
         e.preventDefault();
-        console.log("Buscar por:", searchQuery);
+
+        console.log("Buscar:", searchQuery);
+
         setShowSearchSuggestions(false);
+
     };
 
     const handleSuggestionClick = (suggestion) => {
+
         setSearchQuery(suggestion);
+
         setShowSearchSuggestions(false);
+
     };
 
+    /* =========================
+       FECHAR MENU AO CLICAR
+    ========================= */
+
     const handleNavLinkClick = () => {
+
         setIsMobileMenuOpen(false);
+
     };
 
     return (
         <>
-            {/* HEADER COM LOGO E BUSCA */}
+
+            {/* ================= HEADER ================= */}
+
             <header className="navbar-header">
+
                 <div className="navbar-container">
-                    {/* LOGO REDONDA */}
+
+                    {/* LOGO */}
+
                     <div className="navbar-logo">
+
                         <a href="/" className="logo-link">
-                            <img src={logoRedonda} alt="Enlace das Arteiras" className="logo-img logo-redonda" />
+
+                            <img
+                                src={logoRedonda}
+                                alt="Enlace das Arteiras"
+                                className="logo-img"
+                            />
+
                         </a>
+
                     </div>
 
-                    {/* BARRA DE BUSCA */}
-                    <form className="search-bar" onSubmit={handleSearchSubmit}>
+                    {/* BUSCA */}
+
+                    <form
+                        className="search-bar"
+                        onSubmit={handleSearchSubmit}
+                    >
+
                         <div className="search-input-wrapper">
+
                             <input
                                 type="text"
                                 placeholder="Buscar produtos, artesãos..."
                                 className="search-input"
                                 value={searchQuery}
                                 onChange={handleSearchChange}
-                                onFocus={() => searchQuery && setShowSearchSuggestions(true)}
-                                aria-label="Buscar produtos"
+                                onFocus={() =>
+                                    searchQuery &&
+                                    setShowSearchSuggestions(true)
+                                }
                             />
-                            <button type="submit" className="search-btn" aria-label="Buscar">
-                                <svg
-                                    width="20"
-                                    height="20"
-                                    viewBox="0 0 20 20"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    aria-hidden="true"
-                                >
-                                    <circle cx="9" cy="9" r="7" />
-                                    <path d="m14 14 4 4" />
-                                </svg>
+
+                            {/* BOTÃO BUSCA */}
+
+                            <button
+                                type="submit"
+                                className="search-btn"
+                            >
+
+                                🔍
+
                             </button>
 
-                            {/* SUGESTÕES DE BUSCA */}
+                            {/* SUGESTÕES */}
+
                             {showSearchSuggestions && (
-                                <div className="search-suggestions" role="listbox">
+
+                                <div className="search-suggestions">
+
                                     {searchSuggestions
-                                        .filter((s) =>
-                                            s.toLowerCase().includes(searchQuery.toLowerCase())
+                                        .filter((item) =>
+                                            item
+                                                .toLowerCase()
+                                                .includes(
+                                                    searchQuery.toLowerCase()
+                                                )
                                         )
                                         .map((suggestion, index) => (
+
                                             <div
                                                 key={index}
                                                 className="suggestion-item"
-                                                onClick={() => handleSuggestionClick(suggestion)}
-                                                role="option"
-                                                tabIndex={0}
-                                                onKeyDown={(e) => {
-                                                    if (e.key === "Enter") handleSuggestionClick(suggestion);
-                                                }}
+                                                onClick={() =>
+                                                    handleSuggestionClick(
+                                                        suggestion
+                                                    )
+                                                }
                                             >
-                                                <svg
-                                                    width="16"
-                                                    height="16"
-                                                    viewBox="0 0 20 20"
-                                                    fill="none"
-                                                    stroke="currentColor"
-                                                    strokeWidth="2"
-                                                    aria-hidden="true"
-                                                >
-                                                    <circle cx="9" cy="9" r="7" />
-                                                    <path d="m14 14 4 4" />
-                                                </svg>
-                                                {suggestion}
+
+                                                🔍 {suggestion}
+
                                             </div>
+
                                         ))}
+
                                 </div>
+
                             )}
+
                         </div>
+
                     </form>
 
-                    {/* BOTÃO DE AÇÃO PRINCIPAL */}
+                    {/* BOTÃO */}
+
                     <div className="navbar-cta">
-                        <button className="btn-associate" aria-label="Seja nosso associado">
+
+                        <button className="btn-associate">
+
                             Seja nosso associado
+
                         </button>
+
                     </div>
 
-                    {/* MENU HAMBURGER (MOBILE) */}
+                    {/* HAMBURGER */}
+
                     <button
-                        className={`hamburger-menu ${isMobileMenuOpen ? "active" : ""}`}
-                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        aria-label={isMobileMenuOpen ? "Fechar menu" : "Abrir menu"}
-                        aria-expanded={isMobileMenuOpen}
-                        aria-controls="mobile-menu"
+                        className={`hamburger-menu ${isMobileMenuOpen ? "active" : ""
+                            }`}
+                        onClick={() =>
+                            setIsMobileMenuOpen(
+                                !isMobileMenuOpen
+                            )
+                        }
                     >
+
                         <span></span>
                         <span></span>
                         <span></span>
+
                     </button>
+
                 </div>
+
             </header>
 
-            {/* BANNER COM IMAGEM */}
+            {/* ================= BANNER ================= */}
+
             <div className="banner-section">
-                <img src={Equipe} alt="Menu Enlace das Arteiras" className="banner-img" />
+
+                <img
+                    src={Equipe}
+                    alt="Equipe Enlace das Arteiras"
+                    className="banner-img"
+                />
+
                 <div className="banner-overlay">
-                    <h1 className="banner-title">Enlace das Arteiras</h1>
-                    <p className="banner-subtitle">Artesanato que conecta pessoas e histórias</p>
+
+                    <h1 className="banner-title">
+
+                        Enlace das Arteiras
+
+                    </h1>
+
+                    <p className="banner-subtitle">
+
+                        Artesanato que conecta pessoas e histórias
+
+                    </p>
+
                 </div>
+
             </div>
 
-            {/* MENU DE NAVEGAÇÃO */}
+            {/* ================= MENU ================= */}
+
             <nav
-                className={`navbar-menu ${isMobileMenuOpen ? "mobile-open" : ""}`}
-                id="mobile-menu"
-                role="navigation"
-                aria-label="Navegação principal"
+                className={`navbar-menu ${isMobileMenuOpen
+                        ? "mobile-open"
+                        : ""
+                    }`}
             >
-                {/* NAVEGAÇÃO PRINCIPAL */}
+
                 <div className="nav-primary">
 
                     <a
@@ -247,7 +351,9 @@ export default function Navbar() {
                     </a>
 
                 </div>
+
             </nav>
+
         </>
     );
 }

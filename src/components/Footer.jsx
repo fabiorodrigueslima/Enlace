@@ -3,13 +3,7 @@ import { MdEmail } from "react-icons/md";
 
 /* LOGOS */
 
-import logoFac from "../assets/Logo - Fac.png";
-import logoEnlace from "../assets/logo-Nova.png";
-import logoMariba from "../assets/Logo - Mariba.png";
-
-import logoMovimento from "../assets/Logo - Movimento.png";
-import logoBrasiliaAmbiental from "../assets/Logo - Brasilia.png";
-import logoSecretaria from "../assets/Logo - Secretaria.png";
+import footerLogos from "../assets/Footer Aprovado - Novo 1_20260520_224710_0000.png";
 
 import "../styles/style.css";
 
@@ -133,28 +127,16 @@ export default function Footer() {
             </nav>
 
             {/* LOGOS */}
-            <div className="footer-logos">
-                <p className="footer-logos-text">
+            <div className="footer-apoio">
+                <p>
                     Este projeto é realizado com recursos do Fundo de Apoio à Cultura do Distrito Federal.
                 </p>
 
-                <div className="footer-logos-horizontal">
-                    <div className="footer-logos-principais">
-                        <img src={logoFac} alt="FAC" />
-                        <img src={logoEnlace} alt="Enlace das Arteiras" />
-                        <img src={logoMariba} alt="Maribá Produções" />
-                    </div>
-
-                    <div className="footer-apoio">
-                        <h3>APOIO:</h3>
-                    </div>
-
-                    <div className="footer-logos-apoio">
-                        <img src={logoMovimento} alt="Movimento Comunitário" />
-                        <img src={logoBrasiliaAmbiental} alt="Brasília Ambiental" />
-                        <img src={logoSecretaria} alt="Secretaria de Cultura" />
-                    </div>
-                </div>
+                <img
+                    src={footerLogos}
+                    alt="Apoio cultural"
+                    className="footer-logos-img"
+                />
             </div>
 
             {/* COPY */}
