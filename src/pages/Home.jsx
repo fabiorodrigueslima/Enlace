@@ -47,7 +47,7 @@ export default function Home() {
       <SEO
         title="Enlace das Arteiras | Cultura, Arte e Sustentabilidade"
         description="Projeto cultural voltado ao fortalecimento do artesanato, empreendedorismo feminino, sustentabilidade e economia criativa no Distrito Federal."
-        image="https://enlacedasarteiras.com.br/capa-site.png"
+        image="https://www.enlacedasarteiras.com.br/logo-whatsapp.png?v=2"
         url="https://enlacedasarteiras.com.br"
       />
       <Navbar />
