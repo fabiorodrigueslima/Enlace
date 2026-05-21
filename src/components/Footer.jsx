@@ -74,7 +74,7 @@ export default function Footer() {
                         </a>
 
                         <a
-                            href="mailto:projetoenlacedasarteiras@gmail.com"
+                            href="mailto:projetoenlacedasarteiras@gmail.com?subject=Contato%20pelo%20site%20Enlace%20das%20Arteiras&body=Olá,%20vim%20pelo%20site%20do%20Enlace%20das%20Arteiras%20e%20gostaria%20de%20mais%20informações."
                             aria-label="Email"
                             target="_blank"
                             rel="noopener noreferrer"
