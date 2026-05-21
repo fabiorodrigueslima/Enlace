@@ -1,6 +1,15 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
+import { motion as Motion } from "framer-motion";
+import {
+    cardItem,
+    fadeUp,
+    refinedHover,
+    scaleIn,
+    staggerContainer,
+    viewportOnce,
+} from "../utils/animations";
 
 import "../styles/style.css";
 
@@ -12,8 +21,13 @@ export default function Cursos() {
             <Navbar />
 
             <main className="cursos-page">
-                <section className="cursos-hero">
-                    <div className="cursos-hero-content">
+                <Motion.section
+                    className="cursos-hero"
+                    variants={fadeUp}
+                    initial="hidden"
+                    animate="visible"
+                >
+                    <Motion.div className="cursos-hero-content" variants={staggerContainer}>
                         <span className="subtitulo">Formação e criatividade</span>
 
                         <h1>Cursos, Oficinas e Vivências</h1>
@@ -29,47 +43,63 @@ export default function Cursos() {
                             para ampliar conhecimentos, fortalecer capacidades empreendedoras
                             e incentivar conexões comunitárias através da arte e da cultura.
                         </p>
-                    </div>
-                </section>
+                    </Motion.div>
+                </Motion.section>
 
-                <section className="oficinas-section">
+                <Motion.section
+                    className="oficinas-section"
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={viewportOnce}
+                >
                     <div className="oficinas-container">
-                        <div className="oficinas-topo">
+                        <Motion.div className="oficinas-topo" variants={fadeUp}>
                             <span className="subtitulo">Programação</span>
                             <h2>Oficinas disponíveis</h2>
                             <p>
                                 Confira as atividades com inscrições abertas e participe dessa
                                 rede de aprendizado, arte e transformação.
                             </p>
-                        </div>
+                        </Motion.div>
 
                         <div className="oficinas-grid">
-                            <article className="oficina-card">
-                                <div className="oficina-banner"></div>
+                            <Motion.article
+                                className="oficina-card"
+                                variants={scaleIn}
+                                whileHover={refinedHover}
+                            >
+                                <Motion.div
+                                    className="oficina-banner"
+                                    initial={{ scale: 1.04 }}
+                                    whileInView={{ scale: 1 }}
+                                    transition={{ duration: 1.1, ease: "easeOut" }}
+                                    viewport={viewportOnce}
+                                />
 
-                                <div className="oficina-content">
+                                <Motion.div className="oficina-content" variants={staggerContainer}>
                                     <span className="oficina-tag">Vivência</span>
 
                                     <h3>Vivência Mulheres em Roda</h3>
 
-                                    <div className="oficina-info">
-                                        <p>
+                                    <Motion.div className="oficina-info" variants={staggerContainer}>
+                                        <Motion.p variants={cardItem}>
                                             <strong>Data:</strong> 26, 27 e 28/05/2026
-                                        </p>
+                                        </Motion.p>
 
-                                        <p>
+                                        <Motion.p variants={cardItem}>
                                             <strong>Horário:</strong> 14h às 18h
-                                        </p>
+                                        </Motion.p>
 
-                                        <p>
+                                        <Motion.p variants={cardItem}>
                                             <strong>Local:</strong> Centro de Práticas Sustentáveis -
                                             CPS
-                                        </p>
+                                        </Motion.p>
 
-                                        <p>
+                                        <Motion.p variants={cardItem}>
                                             <strong>Carga horária:</strong> 12h
-                                        </p>
-                                    </div>
+                                        </Motion.p>
+                                    </Motion.div>
 
                                     <p className="oficina-resumo">
                                         Atividade sensível e imersiva que utiliza linguagens
@@ -85,29 +115,47 @@ export default function Cursos() {
                                     >
                                         Inscreva-se
                                     </a>
-                                </div>
-                            </article>
+                                </Motion.div>
+                            </Motion.article>
                         </div>
                     </div>
-                </section>
+                </Motion.section>
 
-                <section className="galeria-cursos">
+                <Motion.section
+                    className="galeria-cursos"
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={viewportOnce}
+                >
                     <div className="galeria-cursos-container">
                         <span className="subtitulo">Galeria</span>
 
                         <h2>Registros das atividades</h2>
 
-                        <div className="galeria-carrossel">
-                            <div className="galeria-item">Foto 1</div>
-                            <div className="galeria-item">Foto 2</div>
-                            <div className="galeria-item">Foto 3</div>
-                            <div className="galeria-item">Foto 4</div>
-                        </div>
+                        <Motion.div className="galeria-carrossel" variants={staggerContainer}>
+                            {["Foto 1", "Foto 2", "Foto 3", "Foto 4"].map((item) => (
+                                <Motion.div
+                                    className="galeria-item"
+                                    key={item}
+                                    variants={cardItem}
+                                    whileHover={refinedHover}
+                                >
+                                    {item}
+                                </Motion.div>
+                            ))}
+                        </Motion.div>
                     </div>
-                </section>
+                </Motion.section>
 
-                <section className="cursos-destaque">
-                    <div className="cursos-destaque-content">
+                <Motion.section
+                    className="cursos-destaque"
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={viewportOnce}
+                >
+                    <Motion.div className="cursos-destaque-content" whileHover={{ scale: 1.01 }}>
                         <h2>Aprender juntas é transformar realidades!</h2>
 
                         <p>
@@ -128,11 +176,17 @@ export default function Cursos() {
                         </a>
 
                         <strong className="vagas-limitadas">Vagas limitadas!</strong>
-                    </div>
-                </section>
+                    </Motion.div>
+                </Motion.section>
 
-                <section className="cursos-aviso">
-                    <div className="cursos-aviso-content">
+                <Motion.section
+                    className="cursos-aviso"
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={viewportOnce}
+                >
+                    <Motion.div className="cursos-aviso-content" whileHover={{ x: 6 }}>
                         <h3>Informação importante</h3>
 
                         <p>
@@ -140,8 +194,8 @@ export default function Cursos() {
                             <strong>1 kg de alimento não perecível</strong> no dia da
                             atividade, destinado à cooperativa parceira.
                         </p>
-                    </div>
-                </section>
+                    </Motion.div>
+                </Motion.section>
             </main>
 
             <Footer />

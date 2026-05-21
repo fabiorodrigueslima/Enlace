@@ -1,6 +1,13 @@
 import "../styles/style.css";
 
 import { motion as Motion } from "framer-motion";
+import {
+    cardItem,
+    fadeUp,
+    refinedHover,
+    staggerContainer,
+    viewportOnce,
+} from "../utils/animations";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -58,7 +65,12 @@ export default function Parceiros() {
             <main className="parceiros-page">
 
                 {/* TÍTULO DA PÁGINA */}
-                <section className="parceiros-header">
+                <Motion.section
+                    className="parceiros-header"
+                    variants={fadeUp}
+                    initial="hidden"
+                    animate="visible"
+                >
 
                     <span>Conexões que transformam</span>
 
@@ -69,25 +81,22 @@ export default function Parceiros() {
                         que caminham junto com a Enlace das Arteiras.
                     </p>
 
-                </section>
+                </Motion.section>
 
                 {/* PARCEIROS */}
                 <section className="parceiros-section">
 
                     <Motion.div
                         className="parceiros-container"
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 1 }}
-                        viewport={{ once: true }}
+                        variants={staggerContainer}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={viewportOnce}
                     >
 
                         <Motion.div
                             className="parceiros-intro"
-                            initial={{ opacity: 0, y: 80 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
-                            viewport={{ once: true }}
+                            variants={fadeUp}
                         >
 
                             <h2>Parcerias que fortalecem nossa missão</h2>
@@ -102,33 +111,13 @@ export default function Parceiros() {
 
                         <div className="parceiros-grid">
 
-                            {parceiros.map((parceiro, index) => (
+                            {parceiros.map((parceiro) => (
 
                                 <Motion.article
                                     className="parceiro-card"
-                                    key={index}
-
-                                    initial={{
-                                        opacity: 0,
-                                        y: 80
-                                    }}
-
-                                    whileInView={{
-                                        opacity: 1,
-                                        y: 0
-                                    }}
-
-                                    transition={{
-                                        duration: 0.7,
-                                        delay: index * 0.15
-                                    }}
-
-                                    viewport={{ once: true }}
-
-                                    whileHover={{
-                                        y: -12,
-                                        scale: 1.02
-                                    }}
+                                    key={parceiro.nome}
+                                    variants={cardItem}
+                                    whileHover={refinedHover}
                                 >
 
                                     <div className="parceiro-img">

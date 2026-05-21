@@ -1,6 +1,16 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
+import { motion as Motion } from "framer-motion";
+import {
+    cardItem,
+    fadeUp,
+    refinedHover,
+    slideLeft,
+    slideRight,
+    staggerContainer,
+    viewportOnce,
+} from "../utils/animations";
 
 import "../styles/style.css";
 
@@ -12,11 +22,17 @@ export default function SececDf() {
             <main className="secec-page">
 
                 {/* CONTEÚDO */}
-                <section className="secec-content">
+                <Motion.section
+                    className="secec-content"
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={viewportOnce}
+                >
 
                     <div className="secec-container">
 
-                        <div className="secec-info">
+                        <Motion.div className="secec-info" variants={slideRight}>
 
                             <span className="subtitulo">
                                 Página em Desenvolvimento
@@ -39,33 +55,43 @@ export default function SececDf() {
                                 pelo projeto Enlace das Arteiras.
                             </p>
 
-                        </div>
+                        </Motion.div>
 
                         {/* CARD */}
-                        <div className="secec-card">
+                        <Motion.div
+                            className="secec-card"
+                            variants={slideLeft}
+                            whileHover={refinedHover}
+                        >
 
                             <h3>O que você encontrará aqui futuramente</h3>
 
-                            <ul>
-                                <li>Projetos culturais realizados;</li>
-                                <li>Oficinas e ações comunitárias;</li>
-                                <li>Feiras e eventos culturais;</li>
-                                <li>Registros fotográficos;</li>
-                                <li>Parcerias institucionais;</li>
-                                <li>Informações sobre economia criativa;</li>
-                                <li>Impacto social e cultural do projeto.</li>
-                            </ul>
+                            <Motion.ul variants={staggerContainer}>
+                                <Motion.li variants={cardItem}>Projetos culturais realizados;</Motion.li>
+                                <Motion.li variants={cardItem}>Oficinas e ações comunitárias;</Motion.li>
+                                <Motion.li variants={cardItem}>Feiras e eventos culturais;</Motion.li>
+                                <Motion.li variants={cardItem}>Registros fotográficos;</Motion.li>
+                                <Motion.li variants={cardItem}>Parcerias institucionais;</Motion.li>
+                                <Motion.li variants={cardItem}>Informações sobre economia criativa;</Motion.li>
+                                <Motion.li variants={cardItem}>Impacto social e cultural do projeto.</Motion.li>
+                            </Motion.ul>
 
-                        </div>
+                        </Motion.div>
 
                     </div>
 
-                </section>
+                </Motion.section>
 
                 {/* CTA */}
-                <section className="secec-cta">
+                <Motion.section
+                    className="secec-cta"
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={viewportOnce}
+                >
 
-                    <div className="secec-cta-content">
+                    <Motion.div className="secec-cta-content" whileHover={{ scale: 1.01 }}>
 
                         <h2>
                             O projeto continua crescendo
@@ -80,9 +106,9 @@ export default function SececDf() {
                             Conheça nossos parceiros
                         </a>
 
-                    </div>
+                    </Motion.div>
 
-                </section>
+                </Motion.section>
 
             </main>
 

@@ -1,6 +1,16 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
+import { motion as Motion } from "framer-motion";
+import {
+    cardItem,
+    fadeUp,
+    refinedHover,
+    slideLeft,
+    slideRight,
+    staggerContainer,
+    viewportOnce,
+} from "../utils/animations";
 
 import "../styles/style.css";
 
@@ -13,10 +23,16 @@ export default function GastronomiaArtesanal() {
 
                
 
-                <section className="gastronomia-content">
+                <Motion.section
+                    className="gastronomia-content"
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={viewportOnce}
+                >
                     <div className="gastronomia-container">
 
-                        <div className="gastronomia-info">
+                        <Motion.div className="gastronomia-info" variants={slideRight}>
                             <span className="subtitulo">
                                 Página em Desenvolvimento
                             </span>
@@ -37,27 +53,37 @@ export default function GastronomiaArtesanal() {
                                 criatividade e a identidade cultural, fortalecendo a economia
                                 criativa e a geração de renda.
                             </p>
-                        </div>
+                        </Motion.div>
 
-                        <div className="gastronomia-card">
+                        <Motion.div
+                            className="gastronomia-card"
+                            variants={slideLeft}
+                            whileHover={refinedHover}
+                        >
                             <h3>O que você encontrará aqui futuramente</h3>
 
-                            <ul>
-                                <li>Receitas e produtos gastronômicos artesanais;</li>
-                                <li>Oficinas de culinária criativa;</li>
-                                <li>Feiras e eventos gastronômicos;</li>
-                                <li>Histórias de empreendedoras da gastronomia;</li>
-                                <li>Sabores regionais e afetivos;</li>
-                                <li>Galeria com registros das produções;</li>
-                                <li>Novidades sobre cursos e experiências culinárias.</li>
-                            </ul>
-                        </div>
+                            <Motion.ul variants={staggerContainer}>
+                                <Motion.li variants={cardItem}>Receitas e produtos gastronômicos artesanais;</Motion.li>
+                                <Motion.li variants={cardItem}>Oficinas de culinária criativa;</Motion.li>
+                                <Motion.li variants={cardItem}>Feiras e eventos gastronômicos;</Motion.li>
+                                <Motion.li variants={cardItem}>Histórias de empreendedoras da gastronomia;</Motion.li>
+                                <Motion.li variants={cardItem}>Sabores regionais e afetivos;</Motion.li>
+                                <Motion.li variants={cardItem}>Galeria com registros das produções;</Motion.li>
+                                <Motion.li variants={cardItem}>Novidades sobre cursos e experiências culinárias.</Motion.li>
+                            </Motion.ul>
+                        </Motion.div>
 
                     </div>
-                </section>
+                </Motion.section>
 
-                <section className="gastronomia-cta">
-                    <div className="gastronomia-cta-content">
+                <Motion.section
+                    className="gastronomia-cta"
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={viewportOnce}
+                >
+                    <Motion.div className="gastronomia-cta-content" whileHover={{ scale: 1.01 }}>
                         <h2>
                             Sabores que contam histórias
                         </h2>
@@ -71,8 +97,8 @@ export default function GastronomiaArtesanal() {
                         <a href="/parceiros" className="btn-gastronomia-primary">
                             Conheça nossos parceiros
                         </a>
-                    </div>
-                </section>
+                    </Motion.div>
+                </Motion.section>
 
             </main>
 

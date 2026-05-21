@@ -1,9 +1,20 @@
 import Navbar from "../components/Navbar";
 import Equipe from "../assets/Equipe.png";
 import { useEffect } from "react";
+import { motion as Motion } from "framer-motion";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
 import SEO from "../components/SEO";
+import {
+  cardItem,
+  fadeUp,
+  refinedHover,
+  scaleIn,
+  slideLeft,
+  slideRight,
+  staggerContainer,
+  viewportOnce,
+} from "../utils/animations";
 
 export default function Home() {
   useEffect(() => {
@@ -42,11 +53,19 @@ export default function Home() {
       <Navbar />
 
       {/* QUEM SOMOS */}
-      <section className="quem-somos" id="quem-somos" aria-labelledby="quem-somos-title">
+      <Motion.section
+        className="quem-somos"
+        id="quem-somos"
+        aria-labelledby="quem-somos-title"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOnce}
+      >
         <div className="quem-container">
 
           {/* IMAGEM */}
-          <div className="quem-img">
+          <Motion.div className="quem-img" variants={slideRight}>
             <figure>
               <img
                 src={Equipe}
@@ -57,10 +76,10 @@ export default function Home() {
                 Mulheres fortalecendo o artesanato e a transformação social
               </figcaption>
             </figure>
-          </div>
+          </Motion.div>
 
           {/* TEXTO */}
-          <div className="quem-texto">
+          <Motion.div className="quem-texto" variants={slideLeft}>
 
             <span className="subtitulo">Quem Somos</span>
 
@@ -90,62 +109,76 @@ export default function Home() {
               </a>
             </div>
 
-          </div>
+          </Motion.div>
         </div>
-      </section>
+      </Motion.section>
 
       {/* SEÇÃO DE IMPACTO */}
-      <section className="impacto" id="impacto">
+      <Motion.section
+        className="impacto"
+        id="impacto"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOnce}
+      >
         <div className="impacto-container">
 
-          <div className="impacto-topo">
+          <Motion.div className="impacto-topo" variants={fadeUp}>
             <span className="subtitulo">Nosso Impacto</span>
             <h2>Números que transformam realidades</h2>
-          </div>
+          </Motion.div>
 
-          <div className="impacto-stats">
+          <Motion.div className="impacto-stats" variants={staggerContainer}>
 
-            <div className="stat-card">
+            <Motion.div className="stat-card" variants={cardItem} whileHover={refinedHover}>
               <div className="stat-number">500+</div>
               <p className="stat-label">Mulheres Impactadas</p>
               <p className="stat-description">Geração de renda e autonomia</p>
-            </div>
+            </Motion.div>
 
-            <div className="stat-card">
+            <Motion.div className="stat-card" variants={cardItem} whileHover={refinedHover}>
               <div className="stat-number">2.5K+</div>
               <p className="stat-label">Produtos Criados</p>
               <p className="stat-description">Artesanato sustentável</p>
-            </div>
+            </Motion.div>
 
-            <div className="stat-card">
+            <Motion.div className="stat-card" variants={cardItem} whileHover={refinedHover}>
               <div className="stat-number">50+</div>
               <p className="stat-label">Feiras Realizadas</p>
               <p className="stat-description">Conexão com comunidade</p>
-            </div>
+            </Motion.div>
 
-            <div className="stat-card">
+            <Motion.div className="stat-card" variants={cardItem} whileHover={refinedHover}>
               <div className="stat-number">15T</div>
               <p className="stat-label">Material Reciclado</p>
               <p className="stat-description">Sustentabilidade em ação</p>
-            </div>
+            </Motion.div>
 
-          </div>
+          </Motion.div>
 
         </div>
-      </section>
+      </Motion.section>
 
       {/* TESTEMUNHOS */}
-      <section className="testemunhos" id="testemunhos">
+      <Motion.section
+        className="testemunhos"
+        id="testemunhos"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOnce}
+      >
         <div className="testemunhos-container">
 
-          <div className="testemunhos-topo">
+          <Motion.div className="testemunhos-topo" variants={fadeUp}>
             <span className="subtitulo">Histórias de Transformação</span>
             <h2>Vidas que mudaram através da arte</h2>
-          </div>
+          </Motion.div>
 
-          <div className="testemunhos-cards">
+          <Motion.div className="testemunhos-cards" variants={staggerContainer}>
 
-            <div className="card-testemunho">
+            <Motion.div className="card-testemunho" variants={cardItem} whileHover={refinedHover}>
               <div className="testemunho-texto">
                 <p>
                   "O Enlace me deu a oportunidade de transformar meu conhecimento em renda. Hoje sou independente e posso sustentar minha família com dignidade."
@@ -155,9 +188,9 @@ export default function Home() {
                 <h4>Maria Silva</h4>
                 <p>Artesã de Papel Reciclado</p>
               </div>
-            </div>
+            </Motion.div>
 
-            <div className="card-testemunho">
+            <Motion.div className="card-testemunho" variants={cardItem} whileHover={refinedHover}>
               <div className="testemunho-texto">
                 <p>
                   "Participar das oficinas mudou minha vida. Aprendi novas técnicas, conheci mulheres incríveis e agora tenho um negócio próprio."
@@ -167,9 +200,9 @@ export default function Home() {
                 <h4>Fernanda Costa</h4>
                 <p>Artesã de Bijuterias</p>
               </div>
-            </div>
+            </Motion.div>
 
-            <div className="card-testemunho">
+            <Motion.div className="card-testemunho" variants={cardItem} whileHover={refinedHover}>
               <div className="testemunho-texto">
                 <p>
                   "Mais que um trabalho, é uma missão. Juntas estamos criando um futuro mais sustentável e igualitário para todas."
@@ -179,18 +212,25 @@ export default function Home() {
                 <h4>Ana Oliveira</h4>
                 <p>Artesã de Tecido Reciclado</p>
               </div>
-            </div>
+            </Motion.div>
 
-          </div>
+          </Motion.div>
 
         </div>
-      </section>
+      </Motion.section>
 
       {/* O QUE FAZEMOS */}
-      <section className="fazemos" id="fazemos">
+      <Motion.section
+        className="fazemos"
+        id="fazemos"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOnce}
+      >
         <div className="fazemos-container">
 
-          <div className="fazemos-topo">
+          <Motion.div className="fazemos-topo" variants={fadeUp}>
 
             <span className="subtitulo">O Que Fazemos</span>
             <h2>Transformamos ideias em oportunidades</h2>
@@ -198,11 +238,11 @@ export default function Home() {
               Atuamos com projetos que unem arte, sustentabilidade,
               inclusão social e geração de renda.
             </p>
-          </div>
+          </Motion.div>
 
-          <div className="fazemos-cards">
+          <Motion.div className="fazemos-cards" variants={staggerContainer}>
 
-            <div className="card-fazemos">
+            <Motion.div className="card-fazemos" variants={cardItem} whileHover={refinedHover}>
 
               <div className="icon">🎨</div>
               <h3>Artesanato Criativo</h3>
@@ -210,9 +250,9 @@ export default function Home() {
                 Valorizamos talentos e saberes manuais através
                 da produção artesanal.
               </p>
-            </div>
+            </Motion.div>
 
-            <div className="card-fazemos">
+            <Motion.div className="card-fazemos" variants={cardItem} whileHover={refinedHover}>
 
               <div className="icon">♻️</div>
               <h3>Sustentabilidade</h3>
@@ -220,9 +260,9 @@ export default function Home() {
                 Incentivamos reutilização de materiais e práticas
                 conscientes.
               </p>
-            </div>
+            </Motion.div>
 
-            <div className="card-fazemos">
+            <Motion.div className="card-fazemos" variants={cardItem} whileHover={refinedHover}>
 
               <div className="icon">👩‍💼</div>
               <h3>Empoderamento Feminino</h3>
@@ -230,9 +270,9 @@ export default function Home() {
                 Fortalecemos mulheres através do trabalho,
                 autonomia e renda.
               </p>
-            </div>
+            </Motion.div>
 
-            <div className="card-fazemos">
+            <Motion.div className="card-fazemos" variants={cardItem} whileHover={refinedHover}>
 
               <div className="icon">🛍️</div>
               <h3>Feiras e Eventos</h3>
@@ -240,86 +280,99 @@ export default function Home() {
                 Criamos espaços para exposição, vendas e conexão
                 com a comunidade.
               </p>
-            </div>
+            </Motion.div>
 
-          </div>
+          </Motion.div>
 
         </div>
-      </section>
+      </Motion.section>
 
       {/* NOSSOS PROJETOS */}
-      <section className="projetos" id="projetos">
+      <Motion.section
+        className="projetos"
+        id="projetos"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOnce}
+      >
         <div className="projetos-container">
 
           {/* TOPO */}
-          <div className="projetos-topo">
+          <Motion.div className="projetos-topo" variants={fadeUp}>
             <span className="subtitulo">Nossos Projetos</span>
             <h2>Iniciativas que geram impacto real</h2>
             <p>
               Desenvolvemos ações que fortalecem mulheres, promovem
               sustentabilidade e transformam talentos em oportunidades.
             </p>
-          </div>
+          </Motion.div>
 
           {/* CARDS */}
-          <div className="projetos-cards">
+          <Motion.div className="projetos-cards" variants={staggerContainer}>
 
-            <div className="card-projeto">
+            <Motion.div className="card-projeto" variants={cardItem} whileHover={refinedHover}>
               <div className="icon-projeto">🎨</div>
               <h3>Oficinas Criativas</h3>
               <p>
                 Capacitações em artesanato, costura, reciclagem e produção manual.
               </p>
-            </div>
+            </Motion.div>
 
-            <div className="card-projeto">
+            <Motion.div className="card-projeto" variants={cardItem} whileHover={refinedHover}>
               <div className="icon-projeto">♻️</div>
               <h3>Arte Sustentável</h3>
               <p>
                 Reaproveitamento de materiais recicláveis transformados em produtos criativos.
               </p>
-            </div>
+            </Motion.div>
 
-            <div className="card-projeto">
+            <Motion.div className="card-projeto" variants={cardItem} whileHover={refinedHover}>
               <div className="icon-projeto">🛍️</div>
               <h3>Feiras e Exposições</h3>
               <p>
                 Espaços para vendas, divulgação e valorização do trabalho artesanal.
               </p>
-            </div>
+            </Motion.div>
 
-            <div className="card-projeto">
+            <Motion.div className="card-projeto" variants={cardItem} whileHover={refinedHover}>
               <div className="icon-projeto">👩‍💼</div>
               <h3>Autonomia Feminina</h3>
               <p>
                 Incentivo ao empreendedorismo feminino e geração de renda.
               </p>
-            </div>
+            </Motion.div>
 
-            <div className="card-projeto">
+            <Motion.div className="card-projeto" variants={cardItem} whileHover={refinedHover}>
               <div className="icon-projeto">🤝</div>
               <h3>Parcerias Sociais</h3>
               <p>
                 União com cooperativas, empresas e comunidades para ampliar impacto.
               </p>
-            </div>
+            </Motion.div>
 
-            <div className="card-projeto">
+            <Motion.div className="card-projeto" variants={cardItem} whileHover={refinedHover}>
               <div className="icon-projeto">🌱</div>
               <h3>Educação Ambiental</h3>
               <p>
                 Ações conscientes sobre reciclagem, consumo responsável e sustentabilidade.
               </p>
-            </div>
+            </Motion.div>
 
-          </div>
+          </Motion.div>
 
         </div>
-      </section>
+      </Motion.section>
 
       {/* CTA FINAL */}
-      <section className="cta-home">
-        <div className="cta-container">
+      <Motion.section
+        className="cta-home"
+        variants={scaleIn}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOnce}
+      >
+        <Motion.div className="cta-container" whileHover={{ scale: 1.01 }}>
 
           <span className="cta-subtitulo">Faça Parte Dessa Transformação</span>
 
@@ -343,8 +396,8 @@ export default function Home() {
             </a>
           </div>
 
-        </div>
-      </section>
+        </Motion.div>
+      </Motion.section>
 
       {/* RODAPÉ */}
       <Footer />

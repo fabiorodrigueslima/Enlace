@@ -1,6 +1,16 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
+import { motion as Motion } from "framer-motion";
+import {
+    cardItem,
+    fadeUp,
+    refinedHover,
+    slideLeft,
+    slideRight,
+    staggerContainer,
+    viewportOnce,
+} from "../utils/animations";
 
 import "../styles/style.css";
 
@@ -12,10 +22,16 @@ export default function Feiras() {
             <main className="feiras-page">
 
 
-                <section className="feiras-content">
+                <Motion.section
+                    className="feiras-content"
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={viewportOnce}
+                >
                     <div className="feiras-container">
 
-                        <div className="feiras-info">
+                        <Motion.div className="feiras-info" variants={slideRight}>
                             <span className="subtitulo">
                                 Página em Desenvolvimento
                             </span>
@@ -35,27 +51,37 @@ export default function Feiras() {
                                 artesanal, fortalecer a economia criativa, aproximar a comunidade
                                 e gerar oportunidades para mulheres empreendedoras.
                             </p>
-                        </div>
+                        </Motion.div>
 
-                        <div className="feiras-card">
+                        <Motion.div
+                            className="feiras-card"
+                            variants={slideLeft}
+                            whileHover={refinedHover}
+                        >
                             <h3>O que você encontrará aqui futuramente</h3>
 
-                            <ul>
-                                <li>Calendário de feiras e eventos;</li>
-                                <li>Locais e horários das próximas ações;</li>
-                                <li>Produtos artesanais em exposição;</li>
-                                <li>Participação das arteiras;</li>
-                                <li>Registros fotográficos dos eventos;</li>
-                                <li>Parcerias e apoiadores das feiras;</li>
-                                <li>Resultados e impacto das ações realizadas.</li>
-                            </ul>
-                        </div>
+                            <Motion.ul variants={staggerContainer}>
+                                <Motion.li variants={cardItem}>Calendário de feiras e eventos;</Motion.li>
+                                <Motion.li variants={cardItem}>Locais e horários das próximas ações;</Motion.li>
+                                <Motion.li variants={cardItem}>Produtos artesanais em exposição;</Motion.li>
+                                <Motion.li variants={cardItem}>Participação das arteiras;</Motion.li>
+                                <Motion.li variants={cardItem}>Registros fotográficos dos eventos;</Motion.li>
+                                <Motion.li variants={cardItem}>Parcerias e apoiadores das feiras;</Motion.li>
+                                <Motion.li variants={cardItem}>Resultados e impacto das ações realizadas.</Motion.li>
+                            </Motion.ul>
+                        </Motion.div>
 
                     </div>
-                </section>
+                </Motion.section>
 
-                <section className="feiras-cta">
-                    <div className="feiras-cta-content">
+                <Motion.section
+                    className="feiras-cta"
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={viewportOnce}
+                >
+                    <Motion.div className="feiras-cta-content" whileHover={{ scale: 1.01 }}>
                         <h2>
                             A arte ganha vida quando chega à comunidade
                         </h2>
@@ -69,8 +95,8 @@ export default function Feiras() {
                         <a href="/parceiros" className="btn-feiras-primary">
                             Conheça nossos parceiros
                         </a>
-                    </div>
-                </section>
+                    </Motion.div>
+                </Motion.section>
 
             </main>
 

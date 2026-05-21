@@ -1,6 +1,16 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
+import { motion as Motion } from "framer-motion";
+import {
+    cardItem,
+    fadeUp,
+    refinedHover,
+    slideLeft,
+    slideRight,
+    staggerContainer,
+    viewportOnce,
+} from "../utils/animations";
 
 import "../styles/style.css";
 
@@ -9,10 +19,16 @@ export default function ArtesanatoManualismo() {
         <>
             <Navbar />
             <main className="artesanato-page">
-                <section className="artesanato-content">
+                <Motion.section
+                    className="artesanato-content"
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={viewportOnce}
+                >
                     <div className="artesanato-container">
 
-                        <div className="artesanato-info">
+                        <Motion.div className="artesanato-info" variants={slideRight}>
                             <span className="subtitulo">
                                 Página em Desenvolvimento
                             </span>
@@ -33,27 +49,37 @@ export default function ArtesanatoManualismo() {
                                 fonte de renda, criatividade, sustentabilidade e transformação
                                 social.
                             </p>
-                        </div>
+                        </Motion.div>
 
-                        <div className="artesanato-card">
+                        <Motion.div
+                            className="artesanato-card"
+                            variants={slideLeft}
+                            whileHover={refinedHover}
+                        >
                             <h3>O que você encontrará aqui futuramente</h3>
 
-                            <ul>
-                                <li>Peças artesanais produzidas pelas arteiras;</li>
-                                <li>Técnicas de manualismo e criação artística;</li>
-                                <li>Oficinas de artesanato e capacitação;</li>
-                                <li>Produtos feitos com materiais reutilizados;</li>
-                                <li>Histórias das mulheres artesãs;</li>
-                                <li>Galeria com fotos dos trabalhos;</li>
-                                <li>Feiras, exposições e ações culturais.</li>
-                            </ul>
-                        </div>
+                            <Motion.ul variants={staggerContainer}>
+                                <Motion.li variants={cardItem}>Peças artesanais produzidas pelas arteiras;</Motion.li>
+                                <Motion.li variants={cardItem}>Técnicas de manualismo e criação artística;</Motion.li>
+                                <Motion.li variants={cardItem}>Oficinas de artesanato e capacitação;</Motion.li>
+                                <Motion.li variants={cardItem}>Produtos feitos com materiais reutilizados;</Motion.li>
+                                <Motion.li variants={cardItem}>Histórias das mulheres artesãs;</Motion.li>
+                                <Motion.li variants={cardItem}>Galeria com fotos dos trabalhos;</Motion.li>
+                                <Motion.li variants={cardItem}>Feiras, exposições e ações culturais.</Motion.li>
+                            </Motion.ul>
+                        </Motion.div>
 
                     </div>
-                </section>
+                </Motion.section>
 
-                <section className="artesanato-cta">
-                    <div className="artesanato-cta-content">
+                <Motion.section
+                    className="artesanato-cta"
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={viewportOnce}
+                >
+                    <Motion.div className="artesanato-cta-content" whileHover={{ scale: 1.01 }}>
                         <h2>
                             A arte feita à mão conta histórias
                         </h2>
@@ -67,8 +93,8 @@ export default function ArtesanatoManualismo() {
                         <a href="/parceiros" className="btn-artesanato-primary">
                             Conheça nossos parceiros
                         </a>
-                    </div>
-                </section>
+                    </Motion.div>
+                </Motion.section>
 
             </main>
 

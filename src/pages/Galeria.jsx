@@ -1,6 +1,16 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
+import { motion as Motion } from "framer-motion";
+import {
+    cardItem,
+    fadeUp,
+    refinedHover,
+    slideLeft,
+    slideRight,
+    staggerContainer,
+    viewportOnce,
+} from "../utils/animations";
 
 import "../styles/style.css";
 
@@ -12,10 +22,16 @@ export default function Galeria() {
             <main className="galeria-page">
 
                
-                <section className="galeria-content">
+                <Motion.section
+                    className="galeria-content"
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={viewportOnce}
+                >
                     <div className="galeria-container">
 
-                        <div className="galeria-info">
+                        <Motion.div className="galeria-info" variants={slideRight}>
                             <span className="subtitulo">
                                 Página em Desenvolvimento
                             </span>
@@ -35,44 +51,64 @@ export default function Galeria() {
                                 talentos, parcerias e resultados que fazem parte do Enlace
                                 das Arteiras.
                             </p>
-                        </div>
+                        </Motion.div>
 
-                        <div className="galeria-card">
+                        <Motion.div
+                            className="galeria-card"
+                            variants={slideLeft}
+                            whileHover={refinedHover}
+                        >
                             <h3>O que você encontrará aqui futuramente</h3>
 
-                            <ul>
-                                <li>Fotos de oficinas e cursos;</li>
-                                <li>Registros das feiras e eventos;</li>
-                                <li>Produtos artesanais produzidos;</li>
-                                <li>Momentos com parceiros e apoiadores;</li>
-                                <li>Antes e depois de produções criativas;</li>
-                                <li>Galeria das arteiras participantes;</li>
-                                <li>Memórias do projeto em ação.</li>
-                            </ul>
-                        </div>
+                            <Motion.ul variants={staggerContainer}>
+                                <Motion.li variants={cardItem}>Fotos de oficinas e cursos;</Motion.li>
+                                <Motion.li variants={cardItem}>Registros das feiras e eventos;</Motion.li>
+                                <Motion.li variants={cardItem}>Produtos artesanais produzidos;</Motion.li>
+                                <Motion.li variants={cardItem}>Momentos com parceiros e apoiadores;</Motion.li>
+                                <Motion.li variants={cardItem}>Antes e depois de produções criativas;</Motion.li>
+                                <Motion.li variants={cardItem}>Galeria das arteiras participantes;</Motion.li>
+                                <Motion.li variants={cardItem}>Memórias do projeto em ação.</Motion.li>
+                            </Motion.ul>
+                        </Motion.div>
 
                     </div>
-                </section>
+                </Motion.section>
 
-                <section className="galeria-preview">
+                <Motion.section
+                    className="galeria-preview"
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={viewportOnce}
+                >
                     <div className="galeria-preview-container">
                         <span className="subtitulo">Prévia da Galeria</span>
 
                         <h2>Espaço reservado para fotos do projeto</h2>
 
-                        <div className="galeria-grid-preview">
-                            <div className="galeria-placeholder">📷</div>
-                            <div className="galeria-placeholder">🎨</div>
-                            <div className="galeria-placeholder">🛍️</div>
-                            <div className="galeria-placeholder">🤝</div>
-                            <div className="galeria-placeholder">🌱</div>
-                            <div className="galeria-placeholder">✨</div>
-                        </div>
+                        <Motion.div className="galeria-grid-preview" variants={staggerContainer}>
+                            {["📷", "🎨", "🛍️", "🤝", "🌱", "✨"].map((item) => (
+                                <Motion.div
+                                    className="galeria-placeholder"
+                                    key={item}
+                                    variants={cardItem}
+                                    whileHover={refinedHover}
+                                >
+                                    {item}
+                                </Motion.div>
+                            ))}
+                        </Motion.div>
                     </div>
-                </section>
+                </Motion.section>
 
-                <section className="galeria-cta">
-                    <div className="galeria-cta-content">
+                <Motion.section
+                    className="galeria-cta"
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={viewportOnce}
+                >
+                    <Motion.div className="galeria-cta-content" whileHover={{ scale: 1.01 }}>
                         <h2>
                             Cada imagem contará uma história
                         </h2>
@@ -86,8 +122,8 @@ export default function Galeria() {
                         <a href="/parceiros" className="btn-galeria-primary">
                             Conheça nossos parceiros
                         </a>
-                    </div>
-                </section>
+                    </Motion.div>
+                </Motion.section>
 
             </main>
 
