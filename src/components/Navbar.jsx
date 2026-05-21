@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/style.css";
 
 import logoRedonda from "../assets/logo-Nova.png";
@@ -6,24 +7,29 @@ import Equipe from "../assets/Equipe.png";
 
 export default function Navbar() {
 
+    const navigate = useNavigate();
+
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const [searchQuery, setSearchQuery] = useState("");
 
     const [showSearchSuggestions, setShowSearchSuggestions] = useState(false);
 
+    const whatsappContactLink =
+        "https://wa.me/5561999673138?text=Olá,%20vim%20pelo%20site%20e%20quero%20mais%20informações%20sobre%20o%20Enlace%20das%20Arteiras";
+
     /* =========================
        SUGESTÕES
     ========================= */
 
     const searchSuggestions = [
-        "Cadernos Artesanais",
-        "Vasos Reciclados",
-        "Bijuterias Sustentáveis",
-        "Móveis de Madeira Reciclada",
-        "Ecobags",
-        "Luminárias Artesanais",
-        "Organizadores Criativos",
+        { label: "Artesanato e Manualismo", href: "/artesanato-manualismo" },
+        { label: "Gastronomia Artesanal", href: "/gastronomia-artesanal" },
+        { label: "Cursos e Oficinas", href: "/cursos" },
+        { label: "Feiras e Eventos", href: "/feiras" },
+        { label: "Galeria", href: "/galeria" },
+        { label: "Parceiros", href: "/parceiros" },
+        { label: "Contato", href: "#contato" },
     ];
 
     /* =========================
@@ -92,7 +98,17 @@ export default function Navbar() {
 
         e.preventDefault();
 
-        console.log("Buscar:", searchQuery);
+        const normalizedQuery = searchQuery.trim().toLowerCase();
+
+        if (!normalizedQuery) {
+            return;
+        }
+
+        const match = searchSuggestions.find((suggestion) =>
+            suggestion.label.toLowerCase().includes(normalizedQuery)
+        );
+
+        navigate(match ? match.href : "/");
 
         setShowSearchSuggestions(false);
 
@@ -100,9 +116,11 @@ export default function Navbar() {
 
     const handleSuggestionClick = (suggestion) => {
 
-        setSearchQuery(suggestion);
+        setSearchQuery(suggestion.label);
 
         setShowSearchSuggestions(false);
+
+        navigate(suggestion.href);
 
     };
 
@@ -167,6 +185,7 @@ export default function Navbar() {
                             <button
                                 type="submit"
                                 className="search-btn"
+                                aria-label="Buscar"
                             >
 
                                 🔍
@@ -180,17 +199,18 @@ export default function Navbar() {
                                 <div className="search-suggestions">
 
                                     {searchSuggestions
-                                        .filter((item) =>
-                                            item
+                                        .filter((suggestion) =>
+                                            suggestion.label
                                                 .toLowerCase()
                                                 .includes(
                                                     searchQuery.toLowerCase()
                                                 )
                                         )
-                                        .map((suggestion, index) => (
+                                        .map((suggestion) => (
 
-                                            <div
-                                                key={index}
+                                            <button
+                                                type="button"
+                                                key={suggestion.href}
                                                 className="suggestion-item"
                                                 onClick={() =>
                                                     handleSuggestionClick(
@@ -199,9 +219,9 @@ export default function Navbar() {
                                                 }
                                             >
 
-                                                🔍 {suggestion}
+                                                🔍 {suggestion.label}
 
-                                            </div>
+                                            </button>
 
                                         ))}
 
@@ -217,19 +237,27 @@ export default function Navbar() {
 
                     <div className="navbar-cta">
 
-                        <button className="btn-associate">
+                        <a
+                            href={whatsappContactLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn-associate"
+                        >
 
                             Seja nosso associado
 
-                        </button>
+                        </a>
 
                     </div>
 
                     {/* HAMBURGER */}
 
                     <button
+                        type="button"
                         className={`hamburger-menu ${isMobileMenuOpen ? "active" : ""
                             }`}
+                        aria-label={isMobileMenuOpen ? "Fechar menu" : "Abrir menu"}
+                        aria-expanded={isMobileMenuOpen}
                         onClick={() =>
                             setIsMobileMenuOpen(
                                 !isMobileMenuOpen

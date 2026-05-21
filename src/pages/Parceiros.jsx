@@ -1,6 +1,6 @@
 import "../styles/style.css";
 
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -74,7 +74,7 @@ export default function Parceiros() {
                 {/* PARCEIROS */}
                 <section className="parceiros-section">
 
-                    <motion.div
+                    <Motion.div
                         className="parceiros-container"
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
@@ -82,7 +82,7 @@ export default function Parceiros() {
                         viewport={{ once: true }}
                     >
 
-                        <motion.div
+                        <Motion.div
                             className="parceiros-intro"
                             initial={{ opacity: 0, y: 80 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -98,13 +98,13 @@ export default function Parceiros() {
                                 e transformação social.
                             </p>
 
-                        </motion.div>
+                        </Motion.div>
 
                         <div className="parceiros-grid">
 
                             {parceiros.map((parceiro, index) => (
 
-                                <motion.article
+                                <Motion.article
                                     className="parceiro-card"
                                     key={index}
 
@@ -133,7 +133,7 @@ export default function Parceiros() {
 
                                     <div className="parceiro-img">
 
-                                        <motion.img
+                                        <Motion.img
                                             src={parceiro.imagem}
                                             alt={parceiro.nome}
 
@@ -158,13 +158,13 @@ export default function Parceiros() {
 
                                     </div>
 
-                                </motion.article>
+                                </Motion.article>
 
                             ))}
 
                         </div>
 
-                    </motion.div>
+                    </Motion.div>
 
                 </section>
 

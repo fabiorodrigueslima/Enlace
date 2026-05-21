@@ -36,7 +36,7 @@ export default function Home() {
       <SEO
         title="Enlace das Arteiras | Cultura, Arte e Sustentabilidade"
         description="Projeto cultural voltado ao fortalecimento do artesanato, empreendedorismo feminino, sustentabilidade e economia criativa no Distrito Federal."
-        image="https://enlacedasarteiras.com.br/capa-site.jpg"
+        image="https://enlacedasarteiras.com.br/capa-site.png"
         url="https://enlacedasarteiras.com.br"
       />
       <Navbar />
@@ -338,7 +338,7 @@ export default function Home() {
               Fale Conosco
             </a>
 
-            <a href="/quem-somos" className="btn-cta-secondary">
+            <a href="#quem-somos" className="btn-cta-secondary">
               Conheça Nossa História
             </a>
           </div>
