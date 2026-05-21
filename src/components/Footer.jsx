@@ -134,57 +134,27 @@ export default function Footer() {
 
             {/* LOGOS */}
             <div className="footer-logos">
-
                 <p className="footer-logos-text">
                     Este projeto é realizado com recursos do Fundo de Apoio à Cultura do Distrito Federal.
                 </p>
 
-                {/* LOGOS PRINCIPAIS */}
-                <div className="footer-logos-principais">
-
-                    <img
-                        src={logoFac}
-                        alt="FAC"
-                    />
-
-                    <img
-                        src={logoEnlace}
-                        alt="Enlace das Arteiras"
-                    />
-
-                    <img
-                        src={logoMariba}
-                        alt="Maribá Produções"
-                    />
-
-                </div>
-
-                {/* APOIO */}
-                <div className="footer-apoio">
-
-                    <h3>APOIO:</h3>
-
-                    <div className="footer-logos-apoio">
-
-                        <img
-                            src={logoMovimento}
-                            alt="Movimento Comunitário"
-                        />
-
-                        <img
-                            src={logoBrasiliaAmbiental}
-                            alt="Brasília Ambiental"
-                        />
-
-                        <img
-                            src={logoSecretaria}
-                            alt="Secretaria de Cultura"
-                        />
-
+                <div className="footer-logos-horizontal">
+                    <div className="footer-logos-principais">
+                        <img src={logoFac} alt="FAC" />
+                        <img src={logoEnlace} alt="Enlace das Arteiras" />
+                        <img src={logoMariba} alt="Maribá Produções" />
                     </div>
 
-                </div>
+                    <div className="footer-apoio">
+                        <h3>APOIO:</h3>
+                    </div>
 
+                    <div className="footer-logos-apoio">
+                        <img src={logoMovimento} alt="Movimento Comunitário" />
+                        <img src={logoBrasiliaAmbiental} alt="Brasília Ambiental" />
+                        <img src={logoSecretaria} alt="Secretaria de Cultura" />
+                    </div>
+                </div>
             </div>
 
             {/* COPY */}

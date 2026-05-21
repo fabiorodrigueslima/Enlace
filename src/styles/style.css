@@ -652,14 +652,11 @@ input {
 
 /* ================= FOOTER ================= */
 
-/* ================= FOOTER ================= */
-
 .footer {
   width: 100%;
   background: var(--secondary-color);
   color: var(--text-dark);
   overflow: hidden;
-
   border-top: 1px solid var(--border-color);
 }
 
@@ -685,7 +682,6 @@ input {
 
 .footer-subtitle {
   display: inline-block;
-
   margin-bottom: 18px;
 
   color: var(--primary-accent);
@@ -699,9 +695,7 @@ input {
 
 .footer-logo {
   font-size: clamp(2rem, 5vw, 3rem);
-
   margin-bottom: 20px;
-
   color: var(--primary-color);
 }
 
@@ -722,17 +716,13 @@ input {
 
 .footer-right h3 {
   font-size: 1.4rem;
-
   margin-bottom: 16px;
-
   color: var(--primary-dark);
 }
 
 .footer-social-text {
   color: var(--text-light);
-
   line-height: 1.8;
-
   margin-bottom: 25px;
 }
 
@@ -809,90 +799,132 @@ input {
   transform: translateY(-2px);
 }
 
-/* LOGOS */
+/* ================= LOGOS ================= */
 
 .footer-logos {
   width: 100%;
-
   padding: 55px 20px 45px;
-
   text-align: center;
 }
 
 .footer-logos-text {
   font-size: 1.05rem;
-
   color: var(--text-light);
-
-  margin-bottom: 40px;
-
+  margin-bottom: 35px;
   line-height: 1.8;
-
   font-style: italic;
 }
 
-/* PRINCIPAIS */
-
-.footer-logos-principais {
+.footer-logos-horizontal {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-
   gap: 35px;
-
-  margin-bottom: 40px;
+  flex-wrap: wrap;
 }
 
-.footer-logos-principais img {
-  max-width: 140px;
-  max-height: 70px;
-
-  object-fit: contain;
-
-  transition: all var(--transition);
-}
-
-.footer-logos-principais img:hover {
-  transform: scale(1.04);
-}
-
-/* APOIO */
-
-.footer-apoio h3 {
-  font-size: 1rem;
-
-  letter-spacing: 3px;
-
-  margin-bottom: 22px;
-
-  color: var(--primary-dark);
-}
-
+.footer-logos-principais,
 .footer-logos-apoio {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-
   gap: 28px;
+  flex-wrap: wrap;
+}
+
+.footer-apoio h3 {
+  font-size: 1rem;
+  letter-spacing: 3px;
+  color: var(--primary-dark);
+  margin: 0;
+}
+
+.footer-logos-principais img,
+.footer-logos-apoio img {
+  max-width: 130px;
+  max-height: 75px;
+  object-fit: contain;
+}
+
+.footer-logos-principais img:nth-child(1) {
+  max-width: 170px;
+}
+
+.footer-logos-principais img:nth-child(2) {
+  max-width: 160px;
+}
+
+.footer-logos-principais img:nth-child(3) {
+  max-width: 135px;
 }
 
 .footer-logos-apoio img {
+  max-width: 105px;
+}
+
+.footer-logos-apoio img:nth-child(3) {
+  max-width: 150px;
+}
+
+@media (max-width: 768px) {
+  .footer-logos-horizontal {
+    gap: 22px;
+  }
+
+  .footer-logos-principais,
+  .footer-logos-apoio {
+    gap: 18px;
+  }
+
+  .footer-logos-principais img,
+  .footer-logos-apoio img {
+    max-width: 85px;
+    max-height: 50px;
+  }
+
+  .footer-logos-principais img:nth-child(1),
+  .footer-logos-principais img:nth-child(2),
+  .footer-logos-principais img:nth-child(3),
+  .footer-logos-apoio img:nth-child(3) {
+    max-width: 100px;
+  }
+}
+
+/* TEXTO APOIO */
+
+.footer-apoio h3 {
+  font-size: 0.9rem;
+
+  color: var(--primary-dark);
+
+  letter-spacing: 2px;
+
+  margin: 0 10px;
+}
+
+/* TODAS AS IMAGENS */
+
+.footer-logos-principais img,
+.footer-logos-apoio img {
   max-width: 95px;
-  max-height: 60px;
+  max-height: 55px;
 
   object-fit: contain;
-
-  opacity: 0.9;
 
   transition: all var(--transition);
 }
 
+/* LOGO ENLACE */
+
+.footer-logos-principais img:nth-child(2) {
+  max-width: 120px;
+}
+
+/* HOVER */
+
+.footer-logos-principais img:hover,
 .footer-logos-apoio img:hover {
   transform: scale(1.05);
-
-  opacity: 1;
 }
 
 /* COPY */
@@ -936,24 +968,28 @@ input {
     gap: 16px;
   }
 
-  .footer-logos-principais {
-    gap: 24px;
-  }
-
-  .footer-logos-principais img {
-    max-width: 110px;
-  }
-
-  .footer-logos-apoio {
+  .footer-logos-horizontal {
+    flex-direction: column;
     gap: 20px;
   }
 
+  .footer-logos-principais,
+  .footer-logos-apoio {
+    flex-wrap: wrap;
+  }
+
+  .footer-logos-principais img,
   .footer-logos-apoio img {
     max-width: 75px;
+    max-height: 45px;
+  }
+
+  .footer-logos-principais img:nth-child(2) {
+    max-width: 95px;
   }
 
   .footer-logos-text {
-    font-size: 0.95rem;
+    font-size: 0.92rem;
   }
 }
 
