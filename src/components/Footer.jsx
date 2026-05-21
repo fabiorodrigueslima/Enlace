@@ -86,9 +86,6 @@ export default function Footer() {
             </nav>
 
             <div className="footer-logos">
-                <p className="footer-logos-text">
-                    Este projeto é realizado com recursos do Fundo de Apoio à Cultura do Distrito Federal.
-                </p>
 
                 <div className="footer-logos-image">
                     <img
