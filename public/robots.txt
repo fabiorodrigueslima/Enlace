@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://enlacedasarteiras.com.br/sitemap.xml
