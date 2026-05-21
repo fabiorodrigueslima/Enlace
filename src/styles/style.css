@@ -859,15 +859,12 @@ input {
 
 .footer {
   width: 100%;
-
   background: var(--secondary-color);
-
   color: var(--text-dark);
 
   padding-top: 70px;
 
   position: relative;
-
   overflow: hidden;
 
   border-top: 1px solid var(--border-color);

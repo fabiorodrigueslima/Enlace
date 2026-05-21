@@ -128,9 +128,6 @@ export default function Footer() {
 
             {/* LOGOS */}
             <div className="footer-apoio">
-                <p>
-                    Este projeto é realizado com recursos do Fundo de Apoio à Cultura do Distrito Federal.
-                </p>
 
                 <img
                     src={footerLogos}
