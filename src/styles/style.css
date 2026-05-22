@@ -2217,9 +2217,11 @@ input {
 
 .oficina-banner {
   min-height: 520px;
-  background: url("../assets/mulheres-em-roda.jpeg");
-  background-size: cover;
+  background-color: #f4efea;
+  background-image: url("../assets/mulheres-em-roda.jpeg");
+  background-size: contain;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* CONTEÚDO DIREITA */
