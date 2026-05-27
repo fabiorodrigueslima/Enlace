@@ -131,15 +131,19 @@ export default function Cursos() {
                             para ampliar conhecimentos, fortalecer capacidades empreendedoras
                             e incentivar conexões comunitárias através da arte e da cultura.
                         </p>
+
+                        <a href="#oficinas-disponiveis" className="btn-cursos-primary">
+                            Ver cursos e inscrições
+                        </a>
                     </Motion.div>
                 </Motion.section>
 
                 <Motion.section
+                    id="oficinas-disponiveis"
                     className="oficinas-section"
                     variants={staggerContainer}
                     initial="hidden"
-                    whileInView="visible"
-                    viewport={viewportOnce}
+                    animate="visible"
                 >
                     <div className="oficinas-container">
                         <Motion.div className="oficinas-topo" variants={fadeUp}>
