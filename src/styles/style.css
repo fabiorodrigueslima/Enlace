@@ -2158,12 +2158,12 @@ input {
 /* OFICINAS */
 
 .oficinas-section {
-  padding: 80px 8%;
+  padding: 70px 8%;
   background: var(--white);
 }
 
 .oficinas-container {
-  max-width: 1180px;
+  max-width: 1040px;
   margin: 0 auto;
 }
 
@@ -2190,21 +2190,21 @@ input {
 .oficinas-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 28px;
+  gap: 22px;
 }
 
 /* CARD */
 
 .oficina-card {
   background: #fff;
-  border-radius: 30px;
+  border-radius: 24px;
   overflow: hidden;
   box-shadow: var(--shadow);
   border: 1px solid var(--border-color);
   transition: var(--transition);
 
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: minmax(300px, 0.82fr) minmax(0, 1.18fr);
   align-items: stretch;
 }
 
@@ -2216,7 +2216,7 @@ input {
 /* IMAGEM ESQUERDA */
 
 .oficina-banner {
-  min-height: 520px;
+  min-height: 380px;
   background-color: #f4efea;
   background-image: url("../assets/mulheres-em-roda.jpeg");
   background-size: contain;
@@ -2227,7 +2227,7 @@ input {
 /* CONTEÚDO DIREITA */
 
 .oficina-content {
-  padding: 45px;
+  padding: 34px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2235,8 +2235,8 @@ input {
 
 .oficina-tag {
   width: fit-content;
-  margin-bottom: 18px;
-  padding: 8px 16px;
+  margin-bottom: 14px;
+  padding: 7px 15px;
   background: rgba(139, 58, 58, 0.08);
   color: var(--primary-color);
   border-radius: 30px;
@@ -2248,32 +2248,32 @@ input {
 
 .oficina-content h3 {
   color: var(--primary-color);
-  font-size: clamp(32px, 4vw, 50px);
-  line-height: 1.05;
-  margin-bottom: 24px;
+  font-size: clamp(28px, 3.2vw, 40px);
+  line-height: 1.08;
+  margin-bottom: 20px;
 }
 
 .oficina-info {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-bottom: 24px;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .oficina-info p {
   background: var(--secondary-color);
-  padding: 14px;
-  border-radius: 14px;
+  padding: 12px;
+  border-radius: 12px;
   color: var(--text-dark);
   line-height: 1.5;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .oficina-resumo {
-  font-size: 17px;
-  line-height: 1.8;
+  font-size: 15.5px;
+  line-height: 1.7;
   color: #555;
-  margin-bottom: 28px;
+  margin-bottom: 22px;
 }
 
 .btn-inscricao,
@@ -2438,11 +2438,11 @@ input {
   }
 
   .oficina-banner {
-    min-height: 430px;
+    min-height: 380px;
   }
 
   .oficina-content {
-    padding: 35px 25px;
+    padding: 32px 24px;
   }
 }
 
@@ -2477,7 +2477,7 @@ input {
   }
 
   .oficina-banner {
-    min-height: 360px;
+    min-height: 320px;
   }
 
   .galeria-item {
