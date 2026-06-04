@@ -16,6 +16,11 @@ import fotos from "../assets/Fotos.jpeg";
 import harmoniaDeCores from "../assets/Harmonia de cores.jpeg";
 import mulheresEmRoda from "../assets/mulheres-em-roda.jpeg";
 import novasPossibilidades from "../assets/NovasPossibilidades.jpeg";
+import oficinaRegistro1 from "../assets/oficina-registro-1.png";
+import oficinaRegistro2 from "../assets/oficina-registro-2.png";
+import oficinaRegistro3 from "../assets/oficina-registro-3.png";
+import oficinaRegistro4 from "../assets/oficina-registro-4.png";
+import oficinaRegistro5 from "../assets/oficina-registro-5.png";
 import redes from "../assets/Redes.jpeg";
 import trabalho from "../assets/Trabalho.jpeg";
 
@@ -101,6 +106,29 @@ export default function Cursos() {
             resumo:
                 "Vivência formativa voltada a mulheres interessadas em práticas sustentáveis e emancipatórias, a partir da economia solidária e criativa. A atividade promove reflexões sobre saberes tradicionais, ancestralidade feminina e experiências coletivas, estimulando autonomia, geração de renda e bem viver, além de fortalecer vínculos, afetividade e o protagonismo feminino nas relações de trabalho.",
             imagem: economiaCriativa,
+        },
+    ];
+
+    const registrosOficinas = [
+        {
+            titulo: "Vivencia Mulheres em Roda",
+            imagem: oficinaRegistro1,
+        },
+        {
+            titulo: "Turma reunida no Enlace das Arteiras",
+            imagem: oficinaRegistro2,
+        },
+        {
+            titulo: "Participantes das oficinas",
+            imagem: oficinaRegistro3,
+        },
+        {
+            titulo: "Entrega de certificado",
+            imagem: oficinaRegistro4,
+        },
+        {
+            titulo: "Celebracao das atividades",
+            imagem: oficinaRegistro5,
         },
     ];
 
@@ -227,16 +255,16 @@ export default function Cursos() {
                         <h2>Registros das atividades</h2>
 
                         <Motion.div className="galeria-carrossel" variants={staggerContainer}>
-                            {oficinas.map((oficina) => (
+                            {registrosOficinas.map((registro) => (
                                 <Motion.div
                                     className="galeria-item"
-                                    key={oficina.titulo}
+                                    key={registro.titulo}
                                     variants={cardItem}
                                     whileHover={refinedHover}
-                                    style={{ backgroundImage: `url(${oficina.imagem})` }}
-                                    aria-label={`Registro da atividade ${oficina.titulo}`}
+                                    style={{ backgroundImage: `url(${registro.imagem})` }}
+                                    aria-label={registro.titulo}
                                 >
-                                    <span>{oficina.titulo}</span>
+                                    <span>{registro.titulo}</span>
                                 </Motion.div>
                             ))}
                         </Motion.div>

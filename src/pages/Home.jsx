@@ -96,7 +96,7 @@ export default function Home() {
             </p>
 
             <p>
-              Em parceria com a <strong>Cooperativa Ecolimpo</strong>, transformamos materiais recicláveis em produtos únicos e sustentáveis, provando que arte, sustentabilidade e empreendedorismo feminino caminham juntos.
+              Em parceria com a <a href="https://www.cooperaecolimpo.com.br/" target="_blank" rel="noopener noreferrer"><strong>Cooperativa Ecolimpo</strong></a>, transformamos materiais recicláveis em produtos únicos e sustentáveis, provando que arte, sustentabilidade e empreendedorismo feminino caminham juntos.
             </p>
 
             <div className="quem-buttons">
