@@ -762,6 +762,45 @@ input {
   margin-top: 22px;
 }
 
+.testemunhos-cards > .card-testemunho:not(.video-testemunho) {
+  display: none;
+}
+
+.video-testemunho {
+  padding: 16px;
+  overflow: hidden;
+}
+
+.testemunho-video-frame {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  border-radius: calc(var(--radius-md) - 8px);
+  background: var(--primary-dark);
+}
+
+.testemunho-video-frame video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.video-testemunho .testemunho-autor {
+  padding: 18px 8px 4px;
+}
+
+.video-testemunho .testemunho-autor h4 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+.video-testemunho .testemunho-autor p {
+  margin-top: 4px;
+  color: var(--secondary-green);
+  font-size: 15px;
+}
+
 /* =========================================================
    CTA HOME
 ========================================================= */

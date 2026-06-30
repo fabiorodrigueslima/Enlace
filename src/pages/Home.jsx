@@ -16,6 +16,33 @@ import {
   viewportOnce,
 } from "../utils/animations";
 
+const depoimentosVideos = [
+  {
+    nome: "Luciene Andrade",
+    arquivo: "/WhatsApp Video 2026-06-26 at 14.35.52.mp4",
+  },
+  {
+    nome: "Patricia Andrade",
+    arquivo: "/WhatsApp Video 2026-06-26 at 14.35.57.mp4",
+  },
+  {
+    nome: "Valeria Borges",
+    arquivo: "/WhatsApp Video 2026-06-26 at 14.36.26.mp4",
+  },
+  {
+    nome: "Shirley",
+    arquivo: "/WhatsApp Video 2026-06-26 at 14.36.26 (1).mp4",
+  },
+  {
+    nome: "Aldenir",
+    arquivo: "/WhatsApp Video 2026-06-26 at 14.36.27.mp4",
+  },
+  {
+    nome: "Francisca",
+    arquivo: "/WhatsApp Video 2026-06-26 at 14.36.27 (1).mp4",
+  },
+];
+
 export default function Home() {
   useEffect(() => {
     const sections = document.querySelectorAll(
@@ -177,6 +204,28 @@ export default function Home() {
           </Motion.div>
 
           <Motion.div className="testemunhos-cards" variants={staggerContainer}>
+            {depoimentosVideos.map((video) => (
+              <Motion.article
+                className="card-testemunho video-testemunho"
+                variants={cardItem}
+                whileHover={refinedHover}
+                key={video.arquivo}
+              >
+                <div className="testemunho-video-frame">
+                  <video
+                    src={video.arquivo}
+                    controls
+                    preload="metadata"
+                    playsInline
+                    aria-label={`Depoimento de ${video.nome}`}
+                  />
+                </div>
+                <div className="testemunho-autor">
+                  <h4>{video.nome}</h4>
+                  <p>Enlace das Arteiras</p>
+                </div>
+              </Motion.article>
+            ))}
 
             <Motion.div className="card-testemunho" variants={cardItem} whileHover={refinedHover}>
               <div className="testemunho-texto">
