@@ -99,8 +99,8 @@ export default function Cursos() {
         {
             tag: "Oficina",
             titulo: "Saberes Tradicionais e Economia Criativa Feminina",
-            data: "20 e 27/07/2026",
-            horario: "14h às 18h",
+            data: "25 e 01/08/2026",
+            horario: "08h30 às 12h30",
             local: "Centro de Práticas Sustentáveis - CPS",
             cargaHoraria: "8h",
             resumo:
