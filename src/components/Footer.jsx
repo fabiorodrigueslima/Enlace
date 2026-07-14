@@ -97,7 +97,7 @@ export default function Footer() {
                 </a>
 
                 <a href="/secec-df">
-                    SECEC-DF
+                    Transparência
                 </a>
 
                 <a href="/artesanato-manualismo">

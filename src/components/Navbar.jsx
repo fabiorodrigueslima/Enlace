@@ -28,6 +28,7 @@ export default function Navbar() {
         { label: "Cursos e Oficinas", href: "/cursos" },
         { label: "Feiras e Eventos", href: "/feiras" },
         { label: "Galeria", href: "/galeria" },
+        { label: "Transparência e prestação de contas", href: "/secec-df" },
         { label: "Parceiros", href: "/parceiros" },
         { label: "Contato", href: "#contato" },
     ];
@@ -327,7 +328,7 @@ export default function Navbar() {
                         className="nav-link"
                         onClick={handleNavLinkClick}
                     >
-                        SECEC-DF
+                        Transparência e prestação de contas
                     </a>
 
                     <a
