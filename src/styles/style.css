@@ -767,13 +767,16 @@ input {
 }
 
 .video-testemunho {
-  padding: 16px;
+  width: 100%;
+  max-width: 360px;
+  justify-self: center;
+  padding: 14px;
   overflow: hidden;
 }
 
 .testemunho-video-frame {
   width: 100%;
-  aspect-ratio: 9 / 16;
+  aspect-ratio: 3 / 4;
   overflow: hidden;
   border-radius: calc(var(--radius-md) - 8px);
   background: var(--primary-dark);
@@ -787,12 +790,12 @@ input {
 }
 
 .video-testemunho .testemunho-autor {
-  padding: 18px 8px 4px;
+  padding: 14px 6px 2px;
 }
 
 .video-testemunho .testemunho-autor h4 {
   margin-top: 0;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .video-testemunho .testemunho-autor p {
@@ -3742,6 +3745,23 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
+/* Mantém todo o conteúdo acessível para pessoas que desativam animações
+   e evita estados transformados presos em navegadores móveis. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 main,
 section,
 article,
@@ -4241,5 +4261,53 @@ div {
   .feiras-cta-content,
   .galeria-cta-content {
     padding: 22px 16px;
+  }
+}
+
+/* =========================================================
+   DEPOIMENTOS RESPONSIVOS
+========================================================= */
+
+@media (max-width: 768px) {
+  .testemunhos-cards {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-inline: -20px;
+    padding: 4px 20px 18px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .testemunhos-cards::-webkit-scrollbar {
+    display: none;
+  }
+
+  .testemunhos-cards .video-testemunho {
+    flex: 0 0 min(72vw, 280px);
+    max-width: 280px;
+    padding: 10px;
+    scroll-snap-align: center;
+  }
+
+  .video-testemunho .testemunho-autor {
+    padding: 11px 5px 2px;
+  }
+
+  .video-testemunho .testemunho-autor h4 {
+    font-size: 18px;
+  }
+
+  .video-testemunho .testemunho-autor p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 560px) {
+  .testemunhos-cards {
+    margin-inline: -15px;
+    padding-inline: 15px;
   }
 }

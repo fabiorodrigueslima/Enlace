@@ -1,10 +1,15 @@
 export const viewportOnce = {
   once: true,
-  amount: 0.18,
+  // Dispara a animação assim que qualquer parte da seção entra na tela.
+  // Em telas pequenas, exigir 18% deixava seções altas permanentemente
+  // no estado "hidden" em alguns navegadores.
+  amount: 0,
 };
 
 export const fadeUp = {
-  hidden: { opacity: 0, y: 34 },
+  // O conteúdo continua visível mesmo se o IntersectionObserver do
+  // navegador não disparar. A animação passa a ser apenas de movimento.
+  hidden: { opacity: 1, y: 34 },
   visible: {
     opacity: 1,
     y: 0,
@@ -13,7 +18,7 @@ export const fadeUp = {
 };
 
 export const fadeIn = {
-  hidden: { opacity: 0 },
+  hidden: { opacity: 1 },
   visible: {
     opacity: 1,
     transition: { duration: 0.75, ease: "easeOut" },
@@ -21,7 +26,7 @@ export const fadeIn = {
 };
 
 export const slideLeft = {
-  hidden: { opacity: 0, x: 42 },
+  hidden: { opacity: 1, x: 42 },
   visible: {
     opacity: 1,
     x: 0,
@@ -30,7 +35,7 @@ export const slideLeft = {
 };
 
 export const slideRight = {
-  hidden: { opacity: 0, x: -42 },
+  hidden: { opacity: 1, x: -42 },
   visible: {
     opacity: 1,
     x: 0,
@@ -39,7 +44,7 @@ export const slideRight = {
 };
 
 export const scaleIn = {
-  hidden: { opacity: 0, scale: 0.96 },
+  hidden: { opacity: 1, scale: 0.96 },
   visible: {
     opacity: 1,
     scale: 1,
@@ -58,7 +63,7 @@ export const staggerContainer = {
 };
 
 export const cardItem = {
-  hidden: { opacity: 0, y: 26, scale: 0.98 },
+  hidden: { opacity: 1, y: 26, scale: 0.98 },
   visible: {
     opacity: 1,
     y: 0,
