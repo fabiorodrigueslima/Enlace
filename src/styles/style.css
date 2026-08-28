@@ -2887,6 +2887,7 @@ body.modal-open {
 /* CARD */
 
 .oficina-card {
+  position: relative;
   background: #fff;
   border-radius: 24px;
   overflow: hidden;
@@ -2897,6 +2898,24 @@ body.modal-open {
   display: grid;
   grid-template-columns: minmax(300px, 0.82fr) minmax(0, 1.18fr);
   align-items: stretch;
+}
+
+.oficina-novo {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 3;
+  padding: 8px 15px;
+  border: 2px solid rgba(255, 255, 255, 0.82);
+  border-radius: 999px;
+  background: #e94f73;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(139, 58, 58, 0.25);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
 .oficina-card:hover {
@@ -3559,6 +3578,25 @@ body.modal-open {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
+}
+
+.oficina-observacao {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-left: 4px solid #e9aa32;
+  border-radius: 0 10px 10px 0;
+  background: #fff8e8;
+  color: #5e4a35;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.oficina-realizacao {
+  margin-top: 13px;
+  color: var(--text-light);
+  font-size: 0.8rem;
+  font-style: italic;
+  line-height: 1.5;
 }
 
 .galeria-foto {
@@ -4310,4 +4348,508 @@ div {
     margin-inline: -15px;
     padding-inline: 15px;
   }
+}
+
+/* =========================================================
+   FEIRA CULTURAL 2026
+========================================================= */
+
+.feira-page {
+  --feira-wine: #72101a;
+  --feira-wine-dark: #4f0b13;
+  --feira-cream: #fbf7f0;
+  --feira-pink: #e84d6b;
+  --feira-orange: #ef7b2d;
+  --feira-green: #69764a;
+  width: 100%;
+  overflow: hidden;
+  background: var(--feira-cream);
+  color: var(--text-dark);
+}
+
+.feira-shell {
+  width: min(100% - 40px, 1240px);
+  margin-inline: auto;
+}
+
+.feira-section { padding: 100px 0; }
+
+.feira-kicker,
+.feira-eyebrow {
+  color: var(--feira-wine);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.feira-section-title {
+  max-width: 760px;
+  margin: 10px 0 46px;
+  color: var(--feira-wine);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1.05;
+}
+
+.feira-hero {
+  position: relative;
+  min-height: 760px;
+  display: grid;
+  align-items: center;
+  padding: 76px 0;
+  background:
+    radial-gradient(circle at 9% 14%, rgba(232, 77, 107, 0.14) 0 90px, transparent 91px),
+    radial-gradient(circle at 48% 90%, rgba(239, 123, 45, 0.12) 0 120px, transparent 121px),
+    #fffaf4;
+}
+
+.feira-hero-grid { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 70px; align-items: center; }
+.feira-hero-copy { position: relative; z-index: 2; }
+.feira-eyebrow { margin-bottom: 20px; }
+.feira-eyebrow span { color: var(--feira-orange); margin-inline: 8px; }
+
+.feira-hero h1 {
+  color: var(--feira-wine);
+  font-size: clamp(4.2rem, 7vw, 7.3rem);
+  line-height: 0.78;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+.feira-hero h1 span { display: block; }
+.feira-hero h1 small { display: block; margin-top: 24px; color: var(--text-dark); font-size: clamp(1.6rem, 3vw, 2.4rem); line-height: 1; letter-spacing: 0; text-transform: none; }
+.feira-hero-lead { max-width: 520px; margin: 32px 0; font-size: clamp(1.1rem, 2vw, 1.35rem); line-height: 1.55; }
+.feira-hero-details { display: grid; gap: 14px; margin-bottom: 30px; }
+.feira-hero-details p { display: flex; align-items: center; gap: 14px; color: #624e4a; line-height: 1.45; }
+.feira-hero-details svg { flex: 0 0 auto; color: var(--feira-pink); font-size: 1.2rem; }
+.feira-hero-details strong { color: var(--feira-wine); }
+
+.feira-primary-button {
+  min-height: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: 999px;
+  background: var(--feira-wine);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+.feira-primary-button:hover { transform: translateY(-3px); background: var(--feira-wine-dark); box-shadow: 0 12px 24px rgba(79, 11, 19, 0.18); }
+.feira-primary-button:focus-visible { outline: 3px solid var(--feira-orange); outline-offset: 4px; }
+
+.feira-hero-art { position: relative; min-height: 610px; display: grid; place-items: center; }
+.feira-poster-frame { position: relative; z-index: 2; width: min(460px, 82%); aspect-ratio: 4 / 5; overflow: hidden; border: 10px solid #fff; border-radius: 46% 46% 30px 30px; box-shadow: 0 28px 60px rgba(79, 11, 19, 0.2); transform: rotate(2deg); }
+.feira-poster-frame img { width: 100%; height: 100%; object-fit: cover; }
+.feira-shape { position: absolute; border-radius: 50%; }
+.feira-shape-one { width: 220px; height: 220px; right: 0; top: 16px; background: var(--feira-orange); opacity: 0.9; }
+.feira-shape-two { width: 180px; height: 180px; left: 12px; bottom: 4px; border: 32px solid var(--feira-pink); }
+
+.feira-about { background: #fff; }
+.feira-about-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 90px; align-items: start; }
+.feira-about h2, .feira-location h2 { margin-top: 12px; color: var(--feira-wine); font-size: clamp(2.5rem, 4.5vw, 4.2rem); line-height: 1.05; }
+.feira-about-text { padding-left: 40px; border-left: 2px solid #ecd7d3; }
+.feira-about-text p { margin-bottom: 18px; color: #665653; font-size: 1.05rem; line-height: 1.85; }
+.feira-about-text p:last-child { margin-bottom: 0; }
+
+.feira-quick { position: relative; z-index: 3; padding: 0 0 36px; background: #fff; }
+.feira-quick-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid #ecdeda; border-radius: 24px; background: var(--feira-cream); box-shadow: 0 16px 40px rgba(79, 11, 19, 0.07); }
+.feira-quick-item { min-height: 180px; display: flex; align-items: center; gap: 18px; padding: 28px; border-right: 1px solid #e5d5d0; }
+.feira-quick-item:last-child { border-right: 0; }
+.feira-icon { width: 46px; height: 46px; flex: 0 0 auto; display: grid; place-items: center; border-radius: 50%; background: #f5dfe2; color: var(--feira-wine); }
+.feira-quick-item h2 { margin-bottom: 8px; color: var(--feira-wine); font-family: "Nunito", sans-serif; font-size: 0.74rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+.feira-quick-item p { color: #5f4c48; font-size: 0.94rem; line-height: 1.4; }
+.feira-quick-item p:last-child { color: var(--feira-wine); font-weight: 800; }
+
+.feira-schedule { scroll-margin-top: 28px; background: linear-gradient(180deg, #fbf7f0, #f6eee6); }
+.feira-timeline { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 56px; }
+.feira-timeline::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; background: #ddc6c1; }
+.feira-timeline-item { position: relative; min-height: 128px; display: grid; grid-template-columns: 86px 1fr; gap: 20px; align-items: start; padding: 26px; border: 1px solid rgba(114, 16, 26, 0.1); border-radius: 20px; background: rgba(255,255,255,0.74); }
+.feira-timeline-item::before { content: ""; position: absolute; top: 34px; right: -34px; width: 11px; height: 11px; border: 5px solid #f6eee6; border-radius: 50%; background: var(--feira-pink); box-sizing: content-box; }
+.feira-timeline-item:nth-child(even)::before { right: auto; left: -34px; background: var(--feira-orange); }
+.feira-timeline-item time { color: var(--feira-wine); font-size: 1.2rem; font-weight: 900; }
+.feira-timeline-item div { padding-left: 20px; border-left: 2px solid #e8d5d1; }
+.feira-timeline-item p { margin-bottom: 7px; color: #5d4d49; line-height: 1.5; }
+.feira-timeline-item p:last-child { margin-bottom: 0; }
+
+.feira-highlights { background: #fff; }
+.feira-highlight-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
+.feira-highlight-card { overflow: hidden; display: flex; flex-direction: column; border: 1px solid #eee2de; border-radius: 24px; background: #fff; box-shadow: 0 10px 30px rgba(79, 11, 19, 0.06); transition: box-shadow 0.25s ease; }
+.feira-highlight-card:hover { box-shadow: 0 18px 36px rgba(79, 11, 19, 0.11); }
+.feira-highlight-image { aspect-ratio: 4 / 3; overflow: hidden; background: #efe5df; }
+.feira-highlight-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.feira-highlight-card:nth-child(n+3) .feira-highlight-image img { object-position: center 25%; }
+.feira-highlight-card:hover img { transform: scale(1.035); }
+.feira-highlight-content { flex: 1; display: flex; flex-direction: column; align-items: flex-start; padding: 24px; }
+.feira-badge { margin-bottom: 15px; padding: 6px 10px; border-radius: 999px; background: #f6e0e3; color: var(--feira-wine); font-size: 0.66rem; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; }
+.feira-highlight-content h3 { margin-bottom: 12px; color: var(--feira-wine); font-size: 1.6rem; line-height: 1.05; overflow-wrap: anywhere; }
+.feira-highlight-content > p { color: #6a5854; font-size: 0.93rem; line-height: 1.6; }
+.feira-highlight-content .feira-highlight-subtitle { margin: -4px 0 8px; color: var(--feira-orange); font-weight: 800; }
+.feira-highlight-content time { display: flex; align-items: center; gap: 8px; margin-top: auto; padding-top: 22px; color: var(--feira-wine); font-size: 0.88rem; font-weight: 900; }
+
+.feira-experiences { background: #f7eee7; }
+.feira-experience-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.feira-experience-card { display: flex; gap: 22px; padding: 30px; border-radius: 22px; background: #fff; box-shadow: 0 10px 28px rgba(79, 11, 19, 0.05); }
+.feira-experience-icon { width: 58px; height: 58px; flex: 0 0 auto; display: grid; place-items: center; border-radius: 18px; color: #fff; font-size: 1.45rem; }
+.feira-experience-icon.pink { background: var(--feira-pink); }.feira-experience-icon.orange { background: var(--feira-orange); }.feira-experience-icon.green { background: var(--feira-green); }
+.feira-experience-card h3 { margin-bottom: 10px; color: var(--feira-wine); font-family: "Nunito", sans-serif; font-size: 0.9rem; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; }
+.feira-experience-card p { color: #6a5854; font-size: 0.94rem; line-height: 1.65; }
+
+.feira-location { background: #fff; }
+.feira-location-grid { display: grid; grid-template-columns: 0.7fr 1.3fr; min-height: 500px; overflow: hidden; border: 1px solid #eadbd6; border-radius: 30px; background: var(--feira-cream); box-shadow: 0 18px 45px rgba(79,11,19,0.08); }
+.feira-location-copy { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 54px; }
+.feira-location-copy h2 { margin-bottom: 30px; }
+.feira-location-pin { margin-bottom: 16px; color: var(--feira-pink); font-size: 2rem; }
+.feira-location-copy h3 { margin-bottom: 8px; color: var(--text-dark); font-family: "Nunito", sans-serif; font-size: 1.1rem; font-weight: 800; line-height: 1.4; }
+.feira-location-copy > p:not(.feira-kicker) { margin-bottom: 28px; color: #6a5854; }
+.feira-map, .feira-map iframe { width: 100%; height: 100%; min-height: 500px; border: 0; }
+
+.feira-final-cta { position: relative; padding: 92px 0; overflow: hidden; background: var(--feira-wine); color: #fff; }
+.feira-final-cta::after { content: ""; position: absolute; width: 360px; height: 360px; right: -80px; bottom: -190px; border: 45px solid rgba(239,123,45,0.55); border-radius: 50%; }
+.feira-final-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 80px; align-items: center; }
+.feira-final-cta .feira-kicker { color: #ffbd79; }
+.feira-final-cta h2 { margin: 12px 0 20px; color: #fff; font-size: clamp(2.8rem, 5vw, 4.8rem); line-height: 1; }
+.feira-cta-lead { max-width: 600px; color: rgba(255,255,255,0.86); font-size: 1.12rem; line-height: 1.7; }
+.feira-cta-details { padding-left: 44px; border-left: 1px solid rgba(255,255,255,0.25); }
+.feira-cta-details p { margin-bottom: 10px; color: rgba(255,255,255,0.88); font-size: 0.9rem; font-weight: 800; letter-spacing: 0.08em; line-height: 1.6; text-transform: uppercase; }
+.feira-cta-details strong { display: block; margin-top: 24px; color: #ffbd79; font-family: "Handlee", cursive; font-size: 2rem; }
+
+@media (max-width: 1080px) {
+  .feira-hero-grid { gap: 30px; }
+  .feira-highlight-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .feira-quick-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .feira-quick-item:nth-child(2) { border-right: 0; }
+  .feira-quick-item:nth-child(-n+2) { border-bottom: 1px solid #e5d5d0; }
+  .feira-experience-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 800px) {
+  .feira-section { padding: 72px 0; }
+  .feira-hero { min-height: auto; padding: 70px 0; }
+  .feira-hero-grid, .feira-about-grid, .feira-location-grid, .feira-final-grid { grid-template-columns: 1fr; }
+  .feira-hero-copy { text-align: center; }
+  .feira-hero h1 { font-size: clamp(4rem, 18vw, 6.4rem); }
+  .feira-hero-lead { margin-inline: auto; }
+  .feira-hero-details { width: min(100%, 460px); margin-inline: auto; text-align: left; }
+  .feira-hero-art { min-height: 560px; margin-top: 30px; }
+  .feira-about-grid { gap: 34px; }
+  .feira-about-text { padding: 0; border: 0; }
+  .feira-timeline { grid-template-columns: 1fr; gap: 14px; }
+  .feira-timeline::before, .feira-timeline-item::before { display: none; }
+  .feira-location-grid { min-height: 0; }
+  .feira-location-copy { padding: 44px; }
+  .feira-map, .feira-map iframe { min-height: 420px; }
+  .feira-final-grid { gap: 44px; }
+  .feira-cta-details { padding: 32px 0 0; border-left: 0; border-top: 1px solid rgba(255,255,255,0.25); }
+}
+
+@media (max-width: 560px) {
+  .feira-shell { width: min(100% - 30px, 1240px); }
+  .feira-section { padding: 58px 0; }
+  .feira-section-title { margin-bottom: 32px; font-size: clamp(2.3rem, 12vw, 3.2rem); }
+  .feira-hero { padding: 52px 0 58px; }
+  .feira-eyebrow { font-size: 0.69rem; letter-spacing: 0.1em; }
+  .feira-hero h1 { font-size: clamp(3.6rem, 20vw, 5rem); }
+  .feira-hero h1 small { font-size: 1.5rem; }
+  .feira-hero-art { min-height: 430px; }
+  .feira-poster-frame { width: min(330px, 88%); border-width: 7px; border-radius: 42% 42% 24px 24px; }
+  .feira-shape-one { width: 145px; height: 145px; }
+  .feira-shape-two { width: 120px; height: 120px; border-width: 22px; }
+  .feira-about h2, .feira-location h2 { font-size: clamp(2.3rem, 12vw, 3.2rem); }
+  .feira-quick-grid, .feira-highlight-grid { grid-template-columns: 1fr; }
+  .feira-quick-item { min-height: 135px; padding: 24px; border-right: 0; border-bottom: 1px solid #e5d5d0; }
+  .feira-quick-item:nth-child(3) { border-bottom: 1px solid #e5d5d0; }
+  .feira-quick-item:last-child { border-bottom: 0; }
+  .feira-timeline-item { grid-template-columns: 72px 1fr; gap: 12px; padding: 22px 18px; }
+  .feira-timeline-item time { font-size: 1rem; }
+  .feira-timeline-item div { padding-left: 14px; }
+  .feira-experience-card { align-items: flex-start; padding: 24px 20px; }
+  .feira-experience-icon { width: 50px; height: 50px; }
+  .feira-location-copy { padding: 34px 24px; }
+  .feira-map, .feira-map iframe { min-height: 340px; }
+  .feira-final-cta { padding: 68px 0; }
+}
+
+@media (max-width: 360px) {
+  .feira-hero h1 { font-size: 3.55rem; }
+  .feira-hero-details p { align-items: flex-start; font-size: 0.9rem; }
+  .feira-primary-button { width: 100%; }
+  .feira-timeline-item { grid-template-columns: 1fr; }
+  .feira-timeline-item div { padding: 12px 0 0; border-left: 0; border-top: 2px solid #e8d5d1; }
+  .feira-experience-card { display: block; }
+  .feira-experience-icon { margin-bottom: 18px; }
+}
+
+/* Ajuste fiel ao layout oficial da Feira Cultural */
+.feira-page .feira-section { padding-block: 76px; }
+.feira-page .feira-hero {
+  min-height: 620px;
+  padding-block: 52px;
+  background: #fffaf4;
+}
+.feira-page .feira-hero-grid { grid-template-columns: 0.84fr 1.16fr; gap: 46px; }
+.feira-page .feira-hero h1 { font-size: clamp(4rem, 6.2vw, 6.4rem); }
+.feira-page .feira-hero-art { min-height: 510px; }
+.feira-main-photo {
+  position: absolute;
+  z-index: 1;
+  top: -52px;
+  right: -30px;
+  width: 82%;
+  height: 370px;
+  overflow: hidden;
+  border: 7px solid #fff;
+  border-radius: 0 0 0 46%;
+  box-shadow: 0 18px 44px rgba(79, 11, 19, 0.13);
+  background-repeat: no-repeat;
+  background-size: 194% auto;
+  background-position: right top;
+}
+.feira-main-photo img,
+.feira-bubble-photo img { width: 100%; height: 100%; object-fit: cover; }
+.feira-main-photo img { object-position: center 32%; }
+.feira-bubble-photo {
+  position: absolute;
+  z-index: 3;
+  bottom: 2px;
+  width: 164px;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 6px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 12px 28px rgba(79, 11, 19, 0.13);
+  background-repeat: no-repeat;
+}
+.feira-bubble-one { left: 4%; }
+.feira-bubble-two {
+  left: 34%;
+  background-size: 350%;
+  background-position: 50% 68%;
+}
+.feira-bubble-three {
+  left: 64%;
+  background-size: 220%;
+  background-position: 100% 34%;
+}
+.feira-bubble-three img { object-position: center 20%; }
+.feira-cultural-word { display: flex !important; gap: 0; }
+.feira-cultural-word b { font: inherit; font-weight: inherit; }
+.feira-cultural-word b:nth-child(1),
+.feira-cultural-word b:nth-child(6) { color: #1689c4; }
+.feira-cultural-word b:nth-child(2),
+.feira-cultural-word b:nth-child(5) { color: #e84d6b; }
+.feira-cultural-word b:nth-child(3),
+.feira-cultural-word b:nth-child(7) { color: #f2ad22; }
+.feira-cultural-word b:nth-child(4),
+.feira-cultural-word b:nth-child(8) { color: #ef6c16; }
+.feira-page .feira-shape-one { width: 160px; height: 160px; top: -14px; right: -42px; }
+.feira-page .feira-shape-two { width: 140px; height: 140px; left: -14px; bottom: 44px; border-width: 22px; }
+.feira-about { position: relative; }
+.feira-about-mark {
+  width: min(100%, 380px);
+  margin: 0 auto;
+  opacity: 0.14;
+  filter: grayscale(1) sepia(1);
+}
+.feira-page .feira-about-grid { grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr); gap: 72px; align-items: center; }
+.feira-page .feira-about h2 { font-size: clamp(2.3rem, 3.7vw, 3.5rem); }
+.feira-about-content > p:not(.feira-kicker) { margin-top: 16px; color: #665653; font-size: 1rem; line-height: 1.75; }
+.feira-about-illustration { display: grid; place-items: center; }
+.feira-page .feira-quick-grid { box-shadow: none; }
+.feira-page .feira-quick-item { min-height: 150px; padding: 22px; }
+.feira-page .feira-timeline-item { min-height: 104px; padding: 20px 22px; }
+.feira-page .feira-highlight-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
+.feira-page .feira-highlight-card { border-radius: 16px; }
+.feira-page .feira-highlight-image { aspect-ratio: 1.08 / 1; }
+.feira-page .feira-highlight-content { padding: 17px; }
+.feira-page .feira-highlight-content h3 { font-size: 1.25rem; }
+.feira-page .feira-highlight-content > p { font-size: 0.82rem; }
+.feira-page .feira-experience-card { box-shadow: none; border: 1px solid #eadfd9; }
+.feira-page .feira-location-grid {
+  grid-template-columns: 0.78fr 1.05fr 0.95fr;
+  min-height: 300px;
+  border-radius: 20px;
+  box-shadow: none;
+}
+.feira-page .feira-location-copy { padding: 30px; }
+.feira-page .feira-location-copy h2 { margin-bottom: 18px; font-size: 2.2rem; }
+.feira-page .feira-map,
+.feira-page .feira-map iframe { min-height: 300px; }
+.feira-access {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 30px;
+  background: #fbf6ef;
+}
+.feira-access > svg { flex: 0 0 auto; color: #7251b5; font-size: 2.2rem; }
+.feira-access h3 { margin-bottom: 9px; color: var(--feira-wine); font-family: "Nunito", sans-serif; font-size: 0.9rem; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; }
+.feira-access p { color: #665653; font-size: 0.86rem; line-height: 1.55; }
+.feira-access a { display: inline-block; margin-top: 14px; color: var(--feira-wine); font-size: 0.82rem; font-weight: 800; }
+.feira-page .feira-final-cta { margin: 0 auto 20px; width: min(calc(100% - 40px), 1240px); padding: 50px 0; border-radius: 26px; }
+.feira-page .feira-final-grid { grid-template-columns: 1.15fr 0.85fr 190px; gap: 38px; }
+.feira-page .feira-final-cta h2 { font-size: clamp(2.5rem, 4vw, 3.8rem); }
+.feira-cta-symbol { width: 180px; justify-self: end; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.18)); }
+
+@media (max-width: 1120px) {
+  .feira-page .feira-highlight-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .feira-page .feira-location-grid { grid-template-columns: 1fr 1.2fr; }
+  .feira-access { grid-column: 1 / -1; }
+  .feira-page .feira-final-grid { grid-template-columns: 1.1fr 0.9fr; }
+  .feira-cta-symbol { display: none; }
+}
+
+@media (max-width: 800px) {
+  .feira-page .feira-section { padding-block: 58px; }
+  .feira-page .feira-hero-grid { grid-template-columns: 1fr; }
+  .feira-page .feira-hero-art { min-height: clamp(290px, 65vw, 450px); }
+  .feira-main-photo { top: 0; right: 0; width: 96%; height: min(50vw, 350px); }
+  .feira-bubble-photo { width: 135px; }
+  .feira-page .feira-about-grid { grid-template-columns: 1fr; }
+  .feira-about-illustration { order: 2; }
+  .feira-about-mark { width: min(70vw, 300px); }
+  .feira-page .feira-location-grid { grid-template-columns: 1fr; }
+  .feira-access { grid-column: auto; }
+}
+
+@media (max-width: 620px) {
+  .feira-page .feira-highlight-grid { grid-template-columns: 1fr; }
+  .feira-page .feira-highlight-image { aspect-ratio: 16 / 10; }
+  .feira-page .feira-hero-art { min-height: 290px; }
+  .feira-main-photo { height: 50vw; min-height: 170px; max-height: 220px; border-radius: 0 0 0 40%; }
+  .feira-bubble-photo { width: 100px; border-width: 4px; }
+  .feira-bubble-one { left: 1%; }
+  .feira-bubble-two { left: calc(50% - 50px); }
+  .feira-bubble-three { left: auto; right: 1%; }
+  .feira-page .feira-final-cta { width: calc(100% - 30px); padding: 46px 0; }
+}
+
+/* Hero alinhado à arte oficial enviada */
+@media (min-width: 801px) {
+  .feira-page .feira-hero {
+    min-height: 560px;
+    padding-block: 44px 38px;
+    background:
+      radial-gradient(circle at 2% 2%, transparent 0 58px, rgba(114, 16, 26, 0.05) 59px 61px, transparent 62px),
+      #fffaf4;
+  }
+  .feira-page .feira-hero-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 42px;
+  }
+  .feira-page .feira-hero-copy { padding-left: 8px; }
+  .feira-page .feira-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 14px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: var(--feira-wine);
+    color: #fff;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+  }
+  .feira-page .feira-eyebrow span { color: #fff; }
+  .feira-page .feira-hero h1 {
+    font-family: "Nunito", sans-serif;
+    font-size: clamp(3.35rem, 5vw, 5rem);
+    font-weight: 900;
+    line-height: 0.82;
+    letter-spacing: -0.065em;
+  }
+  .feira-page .feira-hero h1 > span:first-child { padding-left: 7px; }
+  .feira-page .feira-cultural-word { margin-top: 7px; }
+  .feira-page .feira-hero h1 small {
+    margin-top: 17px;
+    padding-left: 4px;
+    font-family: "Handlee", cursive;
+    font-size: clamp(1.65rem, 2.4vw, 2.25rem);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+  .feira-page .feira-hero-lead {
+    max-width: 470px;
+    margin: 22px 0 20px;
+    font-size: 1rem;
+  }
+  .feira-page .feira-hero-details {
+    grid-template-columns: 0.7fr 1.3fr;
+    gap: 0;
+    max-width: 500px;
+    margin-bottom: 19px;
+  }
+  .feira-page .feira-hero-details p {
+    min-height: 48px;
+    padding-right: 17px;
+    font-size: 0.79rem;
+  }
+  .feira-page .feira-hero-details p + p {
+    padding-left: 17px;
+    border-left: 1px solid #dfcbc5;
+  }
+  .feira-page .feira-primary-button {
+    min-height: 42px;
+    padding: 11px 22px;
+    background: #e94f73;
+    font-size: 0.76rem;
+  }
+  .feira-page .feira-primary-button:hover { background: #c9365b; }
+  .feira-page .feira-hero-art {
+    min-height: 470px;
+    align-self: stretch;
+  }
+  .feira-page .feira-main-photo {
+    top: -44px;
+    right: -20px;
+    width: 108%;
+    height: 350px;
+    border: 0;
+    border-radius: 0 0 0 48%;
+    box-shadow: none;
+    background-size: 194% auto;
+    background-position: right top;
+  }
+  .feira-page .feira-main-photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 5px solid #fff;
+    border-top: 0;
+    border-right: 0;
+    border-radius: inherit;
+    pointer-events: none;
+  }
+  .feira-page .feira-bubble-photo {
+    bottom: 8px;
+    width: 148px;
+    border-width: 4px;
+    box-shadow: 0 9px 22px rgba(79, 11, 19, 0.12);
+  }
+  .feira-page .feira-bubble-one { left: 8%; }
+  .feira-page .feira-bubble-two { left: 36%; }
+  .feira-page .feira-bubble-three { left: 64%; }
+  .feira-page .feira-shape-one {
+    width: 105px;
+    height: 105px;
+    top: 24px;
+    right: -75px;
+  }
+  .feira-page .feira-shape-two {
+    display: none;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1050px) {
+  .feira-page .feira-hero-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .feira-page .feira-main-photo { right: -20px; width: 106%; }
+  .feira-page .feira-bubble-photo { width: 116px; }
+  .feira-page .feira-bubble-one { left: 7%; }
+  .feira-page .feira-bubble-two { left: 37%; }
+  .feira-page .feira-bubble-three { left: 67%; }
 }

@@ -23,6 +23,7 @@ import oficinaRegistro4 from "../assets/oficina-registro-4.png";
 import oficinaRegistro5 from "../assets/oficina-registro-5.png";
 import redes from "../assets/Redes.jpeg";
 import trabalho from "../assets/Trabalho.jpeg";
+import oficinaJosefa from "../assets/Feira-Cultural/Oficina Josefa - Enlace das Arteiras.png";
 
 import "../styles/style.css";
 
@@ -30,6 +31,27 @@ export default function Cursos() {
     const linkInscricao = "https://forms.gle/3TRrAM6NgWEAHi1B8";
 
     const oficinas = [
+        {
+            tag: "Oficina gratuita",
+            titulo: "Chás com Plantas Medicinais do Cerrado",
+            data: "29/08/2026 (sábado)",
+            horario: "15h30 às 17h",
+            local: "CPS - Jardins Mangueiral",
+            infoExtraLabel: "Participação",
+            infoExtraValor: "Entrada gratuita",
+            resumo:
+                "A Mestra Josefa Francisco Gomes Ataídes, raizeira e guardiã dos saberes ancestrais do Cerrado, conduz a Oficina de Chás com Plantas Medicinais do Cerrado.",
+            descricaoComplementar:
+                "Uma experiência para conhecer plantas, formas de preparo dos chás, banhos e escalda-pés, com degustação de chás e sorteio de um kit com hidrolato e escalda-pés. Venha aprender, experimentar e compartilhar saberes com a gente!",
+            observacao:
+                "Se puder, traga 1 kg de alimento para doação à Cooperativa de Catadores Ecolimpo.",
+            realizacao:
+                "Este projeto é realizado com recursos do Fundo de Apoio à Cultura do Distrito Federal - FAC.",
+            imagem: oficinaJosefa,
+            link: "/feiras#programacao",
+            textoBotao: "Ver programação da Feira",
+            novo: true,
+        },
         {
             tag: "Vivência",
             titulo: "Vivência Mulheres em Roda",
@@ -191,6 +213,8 @@ export default function Cursos() {
                                     variants={scaleIn}
                                     whileHover={refinedHover}
                                 >
+                                    {oficina.novo && <span className="oficina-novo">Novo</span>}
+
                                     <Motion.div
                                         className="oficina-banner"
                                         style={{ backgroundImage: `url(${oficina.imagem})` }}
@@ -221,19 +245,32 @@ export default function Cursos() {
                                             </Motion.p>
 
                                             <Motion.p variants={cardItem}>
-                                                <strong>Carga horária:</strong> {oficina.cargaHoraria}
+                                                <strong>{oficina.infoExtraLabel || "Carga horária"}:</strong>{" "}
+                                                {oficina.infoExtraValor || oficina.cargaHoraria}
                                             </Motion.p>
                                         </Motion.div>
 
                                         <p className="oficina-resumo">{oficina.resumo}</p>
 
+                                        {oficina.descricaoComplementar && (
+                                            <p className="oficina-resumo">{oficina.descricaoComplementar}</p>
+                                        )}
+
+                                        {oficina.observacao && (
+                                            <p className="oficina-observacao">💛 {oficina.observacao}</p>
+                                        )}
+
+                                        {oficina.realizacao && (
+                                            <p className="oficina-realizacao">{oficina.realizacao}</p>
+                                        )}
+
                                         <a
-                                            href={linkInscricao}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
+                                            href={oficina.link || linkInscricao}
+                                            target={oficina.link?.startsWith("/") ? undefined : "_blank"}
+                                            rel={oficina.link?.startsWith("/") ? undefined : "noopener noreferrer"}
                                             className="btn-inscricao"
                                         >
-                                            Inscreva-se
+                                            {oficina.textoBotao || "Inscreva-se"}
                                         </a>
                                     </Motion.div>
                                 </Motion.article>
